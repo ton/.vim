@@ -21,3 +21,10 @@ endif
 filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+
+" Set our personal modifier key to ','.
+let mapleader = ","
+
+" Quickly edit/reload the vimrc file.
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
