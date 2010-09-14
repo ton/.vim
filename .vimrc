@@ -16,3 +16,8 @@ if &t_Co > 2 || has("gui_running")
 else
   colorscheme wombat256
 endif
+
+" Load pathogen.
+filetype off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
