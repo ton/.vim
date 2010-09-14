@@ -26,7 +26,7 @@ call pathogen#helptags()
 let mapleader = ","
 
 " Basic editor settings
-set nowrap                          " don't wrap lines
+set wrap                            " wrap too long lines.
 set tabstop=4                       " a tab is four spaces
 set backspace=indent,eol,start      " allow backspacing over everything in insert mode
 set autoindent                      " always set autoindenting on
@@ -38,6 +38,16 @@ set showmatch                       " set show matching parenthesis
 set smartcase                       " ignore case if search pattern is all lowercase, case-sensitive otherwise
 set smarttab                        " insert tabs on the start of a line according to shiftwidth, not tabstop
 set incsearch                       " show search matches as you type
+set autoread                        " automatically reload a file when it has been changed
+set printoptions=paper:a4,duplex:on " print on a4 by default and enable duplex printing
+set expandtab                       " insert spaces when the tab key is pressed
+set hidden                          " be able to put the current buffer to the background without writing to disk and remember marks and undo-history when a background buffer becomes current again
+set showmatch                       " enable brace highlighting
+set matchtime=3                     " set brace match time
+set history=50                      " keep 50 lines of command line history
+set ruler                           " show the cursor position all the time
+set showcmd                         " display incomplete commands
+set scrolloff=3                     " maintain more context around the cursor
 
 " Quickly edit/reload the vimrc file.
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
