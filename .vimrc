@@ -61,11 +61,20 @@ autocmd filetype python set expandtab
 highlight TrailingWhitespace ctermbg=red guibg=red
 match TrailingWhitespace /\s\+\%#\@!\n/
 
+" ------------------------------------------------------------------------------------------------------------------------
 " Custom key mappings.
+" ------------------------------------------------------------------------------------------------------------------------
 
 " Remap Ctrl-j and Ctrl-k to allow for easy window switching
 nmap <silent> <C-j> :tabp<CR>
 nmap <silent> <C-k> :tabn<CR>
 
+" ------------------------------------------------------------------------------------------------------------------------
+" Configure plugins.
+" ------------------------------------------------------------------------------------------------------------------------
+
 " Configure Command-T plugin.
 let g:CommandTAcceptSelectionTabMap = "<CR>"		" Open files in new tabs by default.
+let g:CommandTMatchWindowAtTop = 1					" Maximum height of Command-T popup.
+let g:CommandTMaxHeight = 20						" Maximum height of Command-T popup.
+nmap <silent> <leader>r :CommandTFlush<CR> 			" Refresh Command-T cache.
