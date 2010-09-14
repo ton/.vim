@@ -28,3 +28,8 @@ let mapleader = ","
 " Quickly edit/reload the vimrc file.
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" Read in a custom Vim configuration local to the working directory.
+if filereadable(".project.vim")
+    so .project.vim
+endif
