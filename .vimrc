@@ -55,3 +55,7 @@ filetype indent on
 
 " File type dependent settings.
 autocmd filetype python set expandtab
+
+" Highlight trailing whitespace.
+highlight TrailingWhitespace ctermbg=red guibg=red
+match TrailingWhitespace /\s\+\n$/
