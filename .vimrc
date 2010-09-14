@@ -50,7 +50,7 @@ set showcmd                         " display incomplete commands
 set scrolloff=3                     " maintain more context around the cursor
 
 " Quickly edit/reload the vimrc file.
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>ov :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Read in a custom Vim configuration local to the working directory.
@@ -84,8 +84,20 @@ nmap <silent> <C-k> :tabn<CR>
 " ------------------------------------------------------------------------------------------------------------------------
 
 " Configure Command-T plugin.
-"let g:CommandTAcceptSelectionTabMap = "<CR>"       " Open files in new tabs by default.
+function! CommandTOpenInNewTab()
+    let g:CommandTAcceptSelectionMap = ""
+    let g:CommandTAcceptSelectionTabMap = "<CR>"
+    exe "CommandT"
+endfunction
+
+function! CommandTOpenInCurrentTab()
+    let g:CommandTAcceptSelectionMap = "<CR>"
+    let g:CommandTAcceptSelectionTabMap = ""
+    exe "CommandT"
+endfunction
+
 let g:CommandTMatchWindowAtTop = 1                  " Maximum height of Command-T popup.
 let g:CommandTMaxHeight = 20                        " Maximum height of Command-T popup.
-nmap <unique> <silent> <leader>t :CommandT<CR>
-nmap <unique> <silent> <leader>r :CommandTFlush<CR>
+nmap  <silent> <leader>e :call CommandTOpenInCurrentTab()<CR>
+nmap  <silent> <leader>t :call CommandTOpenInNewTab()<CR>
+nmap  <silent> <leader>r :CommandTFlush<CR>
