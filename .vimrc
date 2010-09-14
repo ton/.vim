@@ -47,3 +47,11 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 if filereadable(".project.vim")
     so .project.vim
 endif
+
+" Enable plugin support based on filetypes.
+filetype on
+filetype plugin on
+filetype indent on
+
+" File type dependent settings.
+autocmd filetype python set expandtab
