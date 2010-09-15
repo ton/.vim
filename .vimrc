@@ -48,6 +48,7 @@ set history=50                      " keep 50 lines of command line history
 set ruler                           " show the cursor position all the time
 set showcmd                         " display incomplete commands
 set scrolloff=3                     " maintain more context around the cursor
+set pastetoggle=<F2>                " F2 temporarily disables formatting when pasting text
 
 " Quickly edit/reload the vimrc file.
 nmap <silent> <leader>ov :e $MYVIMRC<CR>
