@@ -116,3 +116,6 @@ nmap <silent> <C-o> :BufSurfForward<CR>
 " Configure bufexplorer plugin.
 let g:bufExplorerShowRelativePath = 1               " show relative paths
 map <silent> <leader>b :BufExplorer<CR>             " map <leader>b to opening to buffer explorer
+
+" Configure a.vim.
+map <F4> :A<CR>                                     " switch between header and implementation using F4
