@@ -75,9 +75,16 @@ match TrailingWhitespace /\s\+\%#\@!\n/
 " Custom key mappings.
 " ------------------------------------------------------------------------------------------------------------------------
 
-" Remap Ctrl-j and Ctrl-k to allow for easy tab switching
+" Remap Ctrl-j and Ctrl-k to allow for easy tab switching.
 nmap <silent> <C-j> :tabp<CR>
 nmap <silent> <C-k> :tabn<CR>
+
+" Remap Ctrl-s to save the current file.
+map <silent> <C-s> :w<CR>
+imap <silent> <C-s> <Esc>:w<CR>a
+
+" Remap Ctrl-Q to close the current buffer.
+map <silent> <C-q> :bunload<CR>
 
 " ------------------------------------------------------------------------------------------------------------------------
 " Configure plugins.
