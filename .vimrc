@@ -75,6 +75,13 @@ match TrailingWhitespace /\s\+\%#\@!\n/
 " ------------------------------------------------------------------------------------------------------------------------
 " Custom key mappings.
 " ------------------------------------------------------------------------------------------------------------------------
+function! Make()
+  exe "wa"
+  exe "mak"
+  exe "cw"
+  call feedkeys("<CR>", "n")
+  call feedkeys("<CR>", "n")
+endfunction
 
 " Remap Ctrl-j and Ctrl-k to allow for easy tab switching.
 nmap <silent> <C-j> :tabp<CR>
@@ -86,6 +93,9 @@ imap <silent> <C-s> <Esc>:w<CR>a
 
 " Remap Ctrl-Q to close the current buffer.
 map <silent> <C-q> :bunload<CR>
+
+" Remap ,m to make.
+nmap <silent> <leader>m :call Make()<CR>
 
 " ------------------------------------------------------------------------------------------------------------------------
 " Configure plugins.
