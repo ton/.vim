@@ -125,6 +125,7 @@ nmap <silent> <C-i> :BufSurfBack<CR>
 nmap <silent> <C-o> :BufSurfForward<CR>
 
 " Configure bufexplorer plugin.
+let g:bufExplorerFindActive = 0                     " prevent BufExplorer from messing up the navigation history
 let g:bufExplorerShowRelativePath = 1               " show relative paths
 map <silent> <leader>b :BufExplorer<CR>             " map <leader>b to opening to buffer explorer
 
