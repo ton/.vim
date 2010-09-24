@@ -83,9 +83,12 @@ function! Make()
   call feedkeys("<CR>", "n")
 endfunction
 
-" Remap Ctrl-j and Ctrl-k to allow for easy tab switching.
-nmap <silent> <C-j> :tabp<CR>
-nmap <silent> <C-k> :tabn<CR>
+" Map Alt-n to switch to the n-th tab.
+nmap <A-1> :tabnext 1<CR>
+nmap <A-2> :tabnext 2<CR>
+nmap <A-3> :tabnext 3<CR>
+nmap <A-4> :tabnext 4<CR>
+nmap <A-5> :tabnext 5<CR>
 
 " Remap Ctrl-s to save the current file.
 map <silent> <C-s> :w<CR>
