@@ -153,3 +153,10 @@ map <silent> <leader>b :BufExplorer<CR>             " map <leader>b to opening t
 
 " Configure a.vim.
 map <F4> :A<CR>                                     " switch between header and implementation using F4
+
+" ------------------------------------------------------------------------------------------------------------------------
+" File type specific settings.
+" ------------------------------------------------------------------------------------------------------------------------
+
+" Syntax highlighting for Qt qmake project files.
+au BufEnter *.pro setlocal syntax=pro
