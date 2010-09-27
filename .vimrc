@@ -157,3 +157,6 @@ map <F4> :A<CR>                                     " switch between header and 
 
 " Syntax highlighting for Qt qmake project files.
 au BufEnter *.pro setlocal syntax=pro
+
+" May solve slow PHP performance
+" autocmd BufWinLeave * call clearmatches()
