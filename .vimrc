@@ -49,6 +49,8 @@ set ruler                           " show the cursor position all the time
 set showcmd                         " display incomplete commands
 set scrolloff=3                     " maintain more context around the cursor
 set pastetoggle=<F2>                " F2 temporarily disables formatting when pasting text
+set list                            " Display non-printable characters
+set listchars=tab:▸\ ,trail:·       " Set custom characters for non-printable characters
 
 " Quickly edit/reload the vimrc file.
 nmap <silent> <leader>ov :e $MYVIMRC<CR>
@@ -66,11 +68,6 @@ filetype indent on
 
 " File type dependent settings.
 autocmd filetype python set expandtab
-
-" Highlight all trailing whitespace, instead of trailing whitespace followed
-" by the cursor.
-highlight TrailingWhitespace ctermbg=red guibg=red
-match TrailingWhitespace /\s\+\%#\@!\n/
 
 " ------------------------------------------------------------------------------------------------------------------------
 " Custom key mappings.
