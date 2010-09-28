@@ -41,7 +41,8 @@ set incsearch                       " show search matches as you type
 set autoread                        " automatically reload a file when it has been changed
 set printoptions=paper:a4,duplex:on " print on a4 by default and enable duplex printing
 set expandtab                       " insert spaces when the tab key is pressed
-set hidden                          " be able to put the current buffer to the background without writing to disk and remember marks and undo-history when a background buffer becomes current again
+set hidden                          " be able to put the current buffer to the background without writing to disk and remember marks and
+                                    " undo-history when a background buffer becomes current again
 set showmatch                       " enable brace highlighting
 set matchtime=3                     " set brace match time
 set history=50                      " keep 50 lines of command line history
@@ -71,9 +72,9 @@ filetype indent on
 " File type dependent settings.
 autocmd filetype python set expandtab
 
-" ------------------------------------------------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------------------------------------------------------------------------
 " Custom key mappings.
-" ------------------------------------------------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------------------------------------------------------------------------
 function! Make()
   exe "wa"
   exe "mak"
@@ -118,9 +119,9 @@ inoremap <silent><C-k> <C-R>=OmniPopup("up")<CR>
 nmap <silent> <C-k> :cp<CR>
 nmap <silent> <C-j> :cn<CR>
 
-" ------------------------------------------------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------------------------------------------------------------------------
 " Configure plugins.
-" ------------------------------------------------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------------------------------------------------------------------------
 
 " Configure Command-T plugin.
 function! CommandTOpenInNewTab()
@@ -153,9 +154,9 @@ map <silent> <leader>b :BufExplorer<CR>             " map <leader>b to opening t
 " Configure a.vim.
 map <F4> :A<CR>                                     " switch between header and implementation using F4
 
-" ------------------------------------------------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------------------------------------------------------------------------
 " File type specific settings.
-" ------------------------------------------------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------------------------------------------------------------------------
 
 " Syntax highlighting for Qt qmake project files.
 au BufEnter *.pro setlocal syntax=pro
