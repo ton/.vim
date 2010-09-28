@@ -51,6 +51,8 @@ set scrolloff=3                     " maintain more context around the cursor
 set pastetoggle=<F2>                " F2 temporarily disables formatting when pasting text
 set list                            " Display non-printable characters
 set listchars=tab:▸\ ,trail:·       " Set custom characters for non-printable characters
+set colorcolumn=+1                  " Display a margin one column right to the text width
+set textwidth=145                   " Default text width
 
 " Quickly edit/reload the vimrc file.
 nmap <silent> <leader>ov :e $MYVIMRC<CR>

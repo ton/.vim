@@ -56,3 +56,4 @@ hi Special		guifg=#e7f6da gui=none
 hi DiffDelete guifg=#e5786d gui=none
 hi diffRemoved guifg=#e5786d gui=none
 hi Search guibg=#bb0000 guifg=#ffffff gui=none
+hi ColorColumn guifg=#808080 guibg=#303030 gui=none
