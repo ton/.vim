@@ -2,12 +2,6 @@
 " changes other options as a side effect.
 set nocompatible
 
-" Set backup directory.
-set backupdir=$HOME/.vim/backup
-
-" Set the swap directory.
-set dir=$HOME/.vim/swap
-
 " Switch syntax highlighting and a colorscheme on, when the terminal has colors or when we are
 " in GUI mode.
 if &t_Co > 2 || has("gui_running")
@@ -54,6 +48,10 @@ set list                            " Display non-printable characters
 set listchars=tab:▸\ ,trail:·       " Set custom characters for non-printable characters
 set colorcolumn=+1                  " Display a margin one column right to the text width
 set textwidth=145                   " Default text width
+set undofile                        " Enable persistent undo
+set undodir=$HOME/.vim/undo         " Set the persistent undo directory
+set backupdir=$HOME/.vim/backup     " Set the backup directory
+set dir=$HOME/.vim/swap             " Set the swap directory
 
 " Quickly edit/reload the vimrc file.
 nmap <silent> <leader>ov :e $MYVIMRC<CR>
