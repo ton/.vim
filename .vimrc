@@ -2,13 +2,20 @@
 " changes other options as a side effect.
 set nocompatible
 
+" Enable 256 colors for gnome-terminal.
+if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
+endif
+
 " Switch syntax highlighting and a colorscheme on, when the terminal has colors or when we are
 " in GUI mode.
-if &t_Co > 2 || has("gui_running")
-  colorscheme wombat
-  syntax on
-else
-  colorscheme wombat256
+if has("gui_running")
+    colorscheme wombat
+    syntax on
+elseif &t_Co > 2
+    set t_ZH="\e[1m"
+    colorscheme wombat256
+    syntax on
 endif
 
 " Load pathogen.
