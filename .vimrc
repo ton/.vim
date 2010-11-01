@@ -105,24 +105,9 @@ map <silent> <C-q> :bunload<CR>
 " Remap ,m to make.
 nmap <silent> <leader>m :call Make()<CR>
 
-" Map Ctrl-j/Ctrl-k to scroll through the options in the omnicompletion popup window.
-function! OmniPopup(action)
-    if pumvisible()
-        if a:action == "down"
-            return "\<C-N>"
-        elseif a:action == "up"
-            return "\<C-P>"
-        endif
-    endif
-    return a:action
-endfunction
-
-inoremap <silent><C-j> <C-R>=OmniPopup("down")<CR>
-inoremap <silent><C-k> <C-R>=OmniPopup("up")<CR>
-
 " Remap Ctrl-j and Ctrl-k to jump to next and previous compiler error.
-nmap <silent> <C-k> :cp<CR>
-nmap <silent> <C-j> :cn<CR>
+nmap <silent> <C-p> :cp<CR>
+nmap <silent> <C-n> :cn<CR>
 
 " -----------------------------------------------------------------------------------------------------------------------------------------------
 " Configure plugins.
