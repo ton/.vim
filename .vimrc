@@ -150,6 +150,7 @@ nmap <silent> <leader>r :CommandTFlush<CR>
 " Configure bufsurf plugin.
 nmap <silent> <C-i> :BufSurfBack<CR>
 nmap <silent> <C-o> :BufSurfForward<CR>
+let g:BufSurfIgnore = '\[BufExplorer\]'
 
 " Configure bufexplorer plugin.
 let g:bufExplorerFindActive = 0                     " prevent BufExplorer from messing up the navigation history
