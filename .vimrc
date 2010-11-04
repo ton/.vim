@@ -88,6 +88,17 @@ function! Make()
   call feedkeys("<CR>", "n")
 endfunction
 
+function! OmniPopup(action)
+    if pumvisible()
+        if a:action == "down"
+            return "\<C-N>"
+        elseif a:action == "up"
+            return "\<C-P>"
+        endif
+    endif
+    return a:action
+endfunction
+
 " Map Alt-n to switch to the n-th tab.
 nmap <A-1> :tabnext 1<CR>
 nmap <A-2> :tabnext 2<CR>
@@ -99,8 +110,8 @@ nmap <A-5> :tabnext 5<CR>
 map <silent> <C-s> :w<CR>
 imap <silent> <C-s> <Esc>:w<CR>a
 
-" Remap Ctrl-Q to close the current buffer.
-map <silent> <C-q> :bunload<CR>
+" Remap Ctrl-q to close the current buffer.
+nmap <C-q> :bunload<CR>
 
 " Remap ,m to make.
 nmap <silent> <leader>m :call Make()<CR>
@@ -108,6 +119,10 @@ nmap <silent> <leader>m :call Make()<CR>
 " Remap Ctrl-j and Ctrl-k to jump to next and previous compiler error.
 nmap <silent> <C-p> :cp<CR>
 nmap <silent> <C-n> :cn<CR>
+
+" Remap Ctrl-j and Ctrl-k to move up and down in popup lists.
+inoremap <silent><C-j> <C-R>=OmniPopup("down")<CR>
+inoremap <silent><C-k> <C-R>=OmniPopup("up")<CR>
 
 " -----------------------------------------------------------------------------------------------------------------------------------------------
 " Configure plugins.
