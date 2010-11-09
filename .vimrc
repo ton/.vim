@@ -143,6 +143,8 @@ endfunction
 
 let g:CommandTMatchWindowAtTop = 1                  " show the Command-T popup at the top of the screen
 let g:CommandTMaxHeight = 20                        " maximum height of Command-T popup
+let g:CommandTCancelMap = '<ESC>'                   " dismiss the Command-T popup
+
 nmap <silent> <leader>e :call CommandTOpenInCurrentTab()<CR>
 nmap <silent> <leader>t :call CommandTOpenInNewTab()<CR>
 nmap <silent> <leader>r :CommandTFlush<CR>
