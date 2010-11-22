@@ -114,7 +114,7 @@ imap <silent> <C-s> <Esc>:w<CR>a
 nmap <C-q> :bunload<CR>
 
 " Remap ,m to make.
-nmap <silent> <leader>m :call Make()<CR>
+nmap <silent> <leader>m :silent! call Make()<CR>:redraw!<CR>
 
 " Remap Ctrl-j and Ctrl-k to jump to next and previous compiler error.
 nmap <silent> <C-p> :cp<CR>
