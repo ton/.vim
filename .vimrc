@@ -117,8 +117,8 @@ nmap <C-q> :bunload<CR>
 nmap <silent> <leader>m :silent! call Make()<CR>:redraw!<CR>
 
 " Remap Ctrl-j and Ctrl-k to jump to next and previous compiler error.
-nmap <silent> <C-p> :cp<CR>
-nmap <silent> <C-n> :cn<CR>
+nmap <silent> <C-k> :cp<CR>
+nmap <silent> <C-j> :cn<CR>
 
 " Remap Ctrl-j and Ctrl-k to move up and down in popup lists.
 inoremap <silent><C-j> <C-R>=OmniPopup("down")<CR>
