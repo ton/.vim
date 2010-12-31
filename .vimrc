@@ -166,6 +166,16 @@ map <F4> :A<CR>                                     " switch between header and 
 " File type specific settings.
 " -----------------------------------------------------------------------------------------------------------------------------------------------
 
+" Automatically remove trailing whitespace before write.
+function! StripTrailingWhitespace()
+    normal mZ
+    %s/\s\+$//e
+    if line("'Z") != line(".")
+        echo "Stripped whitespace\n"
+    endif
+    normal `Z
+endfunction
+
 " Syntax highlighting for Qt qmake project files.
 au BufEnter *.pro setlocal syntax=pro
 
@@ -175,6 +185,8 @@ au BufEnter *.ui setlocal shiftwidth=1
 
 " Show cursor column for source files.
 au BufEnter *.c,*.cpp,*.h,*.php,*.py setlocal colorcolumn=+1
+
+au BufWritePre .vimrc,*.js,*.cpp,*.hpp,*.php,*.h,*.c :call StripTrailingWhitespace()
 
 " May solve slow PHP performance
 " autocmd BufWinLeave * call clearmatches()
