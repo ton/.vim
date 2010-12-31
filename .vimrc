@@ -54,7 +54,7 @@ set scrolloff=3                     " maintain more context around the cursor
 set pastetoggle=<F2>                " F2 temporarily disables formatting when pasting text
 set list                            " Display non-printable characters
 set listchars=tab:▸\ ,trail:·       " Set custom characters for non-printable characters
-set textwidth=145                   " Default text width
+set textwidth=150                   " Default text width
 set undofile                        " Enable persistent undo
 set undodir=$HOME/.vim/undo         " Set the persistent undo directory
 set backupdir=$HOME/.vim/backup     " Set the backup directory
