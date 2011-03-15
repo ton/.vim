@@ -189,5 +189,8 @@ au BufEnter *.c,*.cpp,*.h,*.php,*.py setlocal colorcolumn=+1
 " Strip trailing white spaces in source code.
 au BufWritePre .vimrc,*.js,*.cpp,*.hpp,*.php,*.h,*.c :call StripTrailingWhitespace()
 
+" Do not expand tabs for web related source code.
+au BufEnter *.php,*.html setlocal noexpandtab
+
 " May solve slow PHP performance
 " autocmd BufWinLeave * call clearmatches()
