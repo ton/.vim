@@ -186,6 +186,7 @@ au BufEnter *.ui setlocal shiftwidth=1
 " Show cursor column for source files.
 au BufEnter *.c,*.cpp,*.h,*.php,*.py setlocal colorcolumn=+1
 
+" Strip trailing white spaces in source code.
 au BufWritePre .vimrc,*.js,*.cpp,*.hpp,*.php,*.h,*.c :call StripTrailingWhitespace()
 
 " May solve slow PHP performance
