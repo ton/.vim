@@ -158,6 +158,9 @@ map <silent> <leader>b :BufExplorer<CR>             " map <leader>b to opening t
 " Configure a.vim.
 map <F4> :A<CR>                                     " switch between header and implementation using F4
 
+" Configure PHP indent plugin.
+let g:PHP_default_indenting = 1
+
 " -----------------------------------------------------------------------------------------------------------------------------------------------
 " File type specific settings.
 " -----------------------------------------------------------------------------------------------------------------------------------------------
