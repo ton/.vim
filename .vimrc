@@ -189,7 +189,7 @@ au BufEnter *.c,*.cpp,*.h,*.php,*.py setlocal colorcolumn=+1
 au BufWritePre .vimrc,*.js,*.cpp,*.hpp,*.php,*.h,*.c :call StripTrailingWhitespace()
 
 " Do not expand tabs for web related source code.
-au BufEnter *.php,*.html setlocal noexpandtab
+au BufEnter *.php,*.html,*.css setlocal noexpandtab
 
 " Show special characters in source code.
 au BufEnter *.php,*.html,*.css,*.cpp,*.h,*.js setlocal list
