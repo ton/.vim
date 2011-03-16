@@ -52,7 +52,6 @@ set ruler                           " show the cursor position all the time
 set showcmd                         " display incomplete commands
 set scrolloff=3                     " maintain more context around the cursor
 set pastetoggle=<F2>                " F2 temporarily disables formatting when pasting text
-set list                            " Display non-printable characters
 set listchars=tab:▸\ ,trail:·       " Set custom characters for non-printable characters
 set textwidth=150                   " Default text width
 set undofile                        " Enable persistent undo
@@ -191,6 +190,9 @@ au BufWritePre .vimrc,*.js,*.cpp,*.hpp,*.php,*.h,*.c :call StripTrailingWhitespa
 
 " Do not expand tabs for web related source code.
 au BufEnter *.php,*.html setlocal noexpandtab
+
+" Show special characters in source code.
+au BufEnter *.php,*.html,*.css,*.cpp,*.h,*.js setlocal list
 
 " May solve slow PHP performance
 " autocmd BufWinLeave * call clearmatches()
