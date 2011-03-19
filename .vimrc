@@ -114,7 +114,7 @@ map <silent> <C-s> :w<CR>
 imap <silent> <C-s> <Esc>:w<CR>a
 
 " Remap Ctrl-q to close the current buffer.
-nmap <C-q> :bunload<CR>
+nmap <C-q> :bdelete<CR>
 
 " Remap ,m to make.
 nmap <silent> <leader>m :silent! call Make()<CR>:redraw!<CR>
