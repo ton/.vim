@@ -74,6 +74,12 @@ filetype on
 filetype plugin on
 filetype indent on
 
+" Always start editing a file in case a swap file exists.
+augroup SimultaneousEdits
+    autocmd!
+    autocmd  SwapExists * :let v:swapchoice = 'e'
+augroup End
+
 " -----------------------------------------------------------------------------------------------------------------------------------------------
 " Custom key mappings.
 " -----------------------------------------------------------------------------------------------------------------------------------------------
