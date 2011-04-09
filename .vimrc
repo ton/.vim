@@ -3,7 +3,7 @@
 set nocompatible
 
 " Enable 256 colors for gnome-terminal.
-if $COLORTERM == 'gnome-terminal'
+if $COLORTERM == 'gnome-terminal' || $COLORTERM == 'rxvt'
     set t_Co=256
 endif
 
@@ -13,7 +13,8 @@ if has("gui_running")
     colorscheme wombat
     syntax on
 elseif &t_Co > 2
-    set t_ZH="\e[1m"
+    set t_so=[7m
+    set t_ZH=[3m
     colorscheme wombat256
     syntax on
 endif
