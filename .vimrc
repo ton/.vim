@@ -3,7 +3,7 @@
 set nocompatible
 
 " Enable 256 colors for gnome-terminal.
-if $COLORTERM == 'gnome-terminal' || $COLORTERM == 'rxvt'
+if $COLORTERM == 'gnome-terminal' || $COLORTERM == 'rxvt' || $COLORTERM == 'rxvt-xpm'
     set t_Co=256
 endif
 
