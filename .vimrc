@@ -169,6 +169,12 @@ endfunction
 inoremap <silent> <C-j> <C-R>=OmniPopup("down")<CR>
 inoremap <silent> <C-k> <C-R>=OmniPopup("up")<CR>
 
+" Open the completion menu using C-Space, note that C-Space inserts the <Nul> characters.
+inoremap <silent> <expr> <Nul> pumvisible() ? "" : "\<C-X>\<C-U>\<Down>"
+
+" Escape should always close the completion menu at once.
+inoremap <silent> <expr> <Esc> pumvisible() ? "\<C-E>" : "\<Esc>"
+
 " Configure (keyword) completion.
 set completeopt=longest,menuone
 
