@@ -92,17 +92,6 @@ function! Make()
   call feedkeys("<CR>", "n")
 endfunction
 
-function! OmniPopup(action)
-    if pumvisible()
-        if a:action == "down"
-            return "\<C-N>"
-        elseif a:action == "up"
-            return "\<C-P>"
-        endif
-    endif
-    return a:action
-endfunction
-
 " Map Alt-n to switch to the n-th tab.
 nmap <A-1> :tabnext 1<CR>
 nmap <A-2> :tabnext 2<CR>
@@ -123,10 +112,6 @@ nmap <silent> <leader>m :silent! call Make()<CR>:redraw!<CR>
 " Remap Ctrl-j and Ctrl-k to jump to next and previous compiler error.
 nmap <silent> <C-k> :cp<CR>
 nmap <silent> <C-j> :cn<CR>
-
-" Remap Ctrl-j and Ctrl-k to move up and down in popup lists.
-inoremap <silent><C-j> <C-R>=OmniPopup("down")<CR>
-inoremap <silent><C-k> <C-R>=OmniPopup("up")<CR>
 
 " -----------------------------------------------------------------------------------------------------------------------------------------------
 " Configure plugins.
@@ -165,6 +150,32 @@ map <silent> <leader>b :BufExplorer<CR>             " map <leader>b to opening t
 
 " Configure a.vim.
 map <F4> :A<CR>                                     " switch between header and implementation using F4
+
+" -----------------------------------------------------------------------------------------------------------------------------------------------
+" Configure (keyword) completion.
+" -----------------------------------------------------------------------------------------------------------------------------------------------
+function! OmniPopup(action)
+    if pumvisible()
+        if a:action == "down"
+            return "\<C-N>"
+        elseif a:action == "up"
+            return "\<C-P>"
+        endif
+    endif
+    return a:action
+endfunction
+
+" Remap Ctrl-j and Ctrl-k to move up and down in popup lists.
+inoremap <silent> <C-j> <C-R>=OmniPopup("down")<CR>
+inoremap <silent> <C-k> <C-R>=OmniPopup("up")<CR>
+
+" Configure (keyword) completion.
+set completeopt=longest,menuone
+
+" Use clang library for C++ keyword completion, which is faster and boasts more features.
+let g:clang_auto_select = 1
+let g:clang_library_path = '/usr/local/lib/'
+let g:clang_use_library = 1
 
 " -----------------------------------------------------------------------------------------------------------------------------------------------
 " File type specific settings.
