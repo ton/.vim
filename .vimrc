@@ -173,7 +173,7 @@ inoremap <silent> <C-k> <C-R>=OmniPopup("up")<CR>
 inoremap <silent> <expr> <Nul> pumvisible() ? "" : "\<C-X>\<C-U>\<Down>"
 
 " Escape should always close the completion menu at once.
-inoremap <silent> <expr> <Esc> pumvisible() ? "\<C-E>" : "\<Esc>"
+inoremap <silent> <expr> <Esc> pumvisible() ? "\<C-E>\<Esc>" : "\<Esc>"
 
 " Configure (keyword) completion.
 set completeopt=longest,menuone
