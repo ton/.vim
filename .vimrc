@@ -200,6 +200,9 @@ endfunction
 " Syntax highlighting for Qt qmake project files.
 au BufEnter *.pro setlocal syntax=pro
 
+" Syntax highlighting for Go.
+au BufEnter *.go setlocal syntax=go
+
 " Set tab stop to 1 for Qt UI definition files.
 au BufEnter *.ui setlocal tabstop=1
 au BufEnter *.ui setlocal shiftwidth=1
