@@ -219,5 +219,8 @@ au BufEnter *.php,*.html,*.css,*.js setlocal noexpandtab
 " Show special characters in source code.
 au BufEnter *.php,*.html,*.css,*.cpp,*.h,*.js setlocal list
 
+" Set text width for Git commit messages.
+au BufEnter .git/COMMIT_EDITMSG setlocal textwidth=72
+
 " May solve slow PHP performance
 " autocmd BufWinLeave * call clearmatches()
