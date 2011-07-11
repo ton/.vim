@@ -220,7 +220,7 @@ au BufWritePre .vimrc,*.js,*.cpp,*.hpp,*.php,*.h,*.c :call StripTrailingWhitespa
 au BufEnter *.php,*.html,*.css,*.js setlocal noexpandtab
 
 " Show special characters in source code.
-au BufEnter *.php,*.html,*.css,*.cpp,*.h,*.js setlocal list
+au BufEnter *.php,*.html,*.css,*.cpp,*.h,*.js,*.py setlocal list
 
 " Set text width for Git commit messages.
 au BufEnter .git/COMMIT_EDITMSG setlocal textwidth=72
