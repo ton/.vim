@@ -59,7 +59,7 @@ set undofile                        " Enable persistent undo
 set undodir=$HOME/.vim/undo         " Set the persistent undo directory
 set backupdir=$HOME/.vim/backup     " Set the backup directory
 set dir=$HOME/.vim/swap             " Set the swap directory
-set clipboard=unnamedplus
+set clipboard=unnamedplus           " Use the system clipboard by default
 
 " Quickly edit/reload the vimrc file.
 nmap <silent> <leader>ov :e $MYVIMRC<CR>
