@@ -175,6 +175,9 @@ inoremap <silent> <expr> <Nul> pumvisible() ? "" : "\<C-X>\<C-U>\<Down>"
 " Escape should always close the completion menu at once.
 inoremap <silent> <expr> <Esc> pumvisible() ? "\<C-E>\<Esc>" : "\<Esc>"
 
+" Enter should select the currently highlighted menu item.
+inoremap <silent> <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+
 " Configure (keyword) completion.
 set completeopt=longest,menuone
 
