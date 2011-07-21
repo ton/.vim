@@ -222,5 +222,8 @@ au BufEnter *.php,*.html,*.css,*.cpp,*.h,*.js,*.py setlocal list
 " Set text width for Git commit messages.
 au BufEnter .git/COMMIT_EDITMSG setlocal textwidth=72
 
+" Set text width for reStructured text.
+au BufEnter *.rst setlocal textwidth=80
+
 " May solve slow PHP performance
 " autocmd BufWinLeave * call clearmatches()
