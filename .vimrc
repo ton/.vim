@@ -194,9 +194,6 @@ let g:clang_use_library = 1
 function! StripTrailingWhitespace()
     normal mZ
     %s/\s\+$//e
-    if line("'Z") != line(".")
-        echo "Stripped whitespace\n"
-    endif
     normal `Z
 endfunction
 
