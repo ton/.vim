@@ -222,5 +222,10 @@ au BufEnter .git/COMMIT_EDITMSG setlocal textwidth=72
 " Set text width for reStructured text.
 au BufEnter *.rst setlocal textwidth=80
 
+" Set text width for Python to 80 to allow for proper docstring and comment formatting.
+au FileType python setlocal textwidth=80
+au FileType python setlocal formatoptions=croqn
+au FileType python setlocal colorcolumn=
+
 " May solve slow PHP performance
 " autocmd BufWinLeave * call clearmatches()
