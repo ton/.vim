@@ -65,11 +65,6 @@ set clipboard=unnamedplus           " Use the system clipboard by default
 nmap <silent> <leader>ov :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-" Read in a custom Vim configuration local to the working directory.
-if filereadable(".project.vim")
-    so .project.vim
-endif
-
 " Enable plugin support based on filetypes.
 filetype on
 filetype plugin on
@@ -232,3 +227,8 @@ au FileType python setlocal colorcolumn=
 
 " May solve slow PHP performance
 " autocmd BufWinLeave * call clearmatches()
+
+" Read in a custom Vim configuration local to the working directory.
+if filereadable(".project.vim")
+    so .project.vim
+endif
