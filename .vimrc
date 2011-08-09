@@ -148,6 +148,9 @@ map <silent> <leader>b :BufExplorer<CR>             " map <leader>b to opening t
 
 " Configure a.vim.
 map <F4> :A<CR>                                     " switch between header and implementation using F4
+let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,sfr:../itf'
+                                                    " include itf directory as alternate search path
+let g:alternateNoDefaultAlternate = 1               " do not open a non-existing alternate file
 
 " ------------------------------------------------------------------------------
 " Configure (keyword) completion.
