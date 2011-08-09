@@ -218,6 +218,9 @@ au BufEnter *.php,*.html,*.css,*.js setlocal noexpandtab
 " Show special characters in source code.
 au BufEnter *.php,*.html,*.css,*.cpp,*.h,*.js,*.py setlocal list
 
+" Add support for Doxygen comment leader.
+au BufEnter *.cpp setlocal comments^=:///
+
 " Set text width for Git commit messages.
 au BufEnter .git/COMMIT_EDITMSG setlocal textwidth=72
 
