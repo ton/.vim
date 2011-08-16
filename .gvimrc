@@ -1,6 +1,3 @@
-" Set default gVim font.
-set gfn=Monaco\ 10
-
 " Disable the GUI toolbar and menubar.
 set guioptions-=T
 set guioptions-=m
