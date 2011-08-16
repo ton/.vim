@@ -219,7 +219,7 @@ au BufEnter *.php,*.html,*.css,*.js setlocal noexpandtab
 au BufEnter *.php,*.html,*.css,*.cpp,*.h,*.js,*.py setlocal list
 
 " Add support for Doxygen comment leader.
-au BufEnter *.cpp setlocal comments^=:///
+au FileType h,hpp,cpp,c setlocal comments^=:///
 
 " Set text width for Git commit messages.
 au BufEnter .git/COMMIT_EDITMSG setlocal textwidth=72
