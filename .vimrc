@@ -218,6 +218,11 @@ au BufEnter *.php,*.html,*.css,*.js setlocal noexpandtab
 " Show special characters in source code.
 au BufEnter *.php,*.html,*.css,*.cpp,*.h,*.js,*.py setlocal list
 
+" Set text width for C++ code to be able to easily format comments.
+au FileType cpp setlocal textwidth=80
+au FileType cpp setlocal colorcolumn=131,132
+au FileType cpp setlocal formatoptions=croqn
+
 " Add support for Doxygen comment leader.
 au FileType h,hpp,cpp,c setlocal comments^=:///
 
