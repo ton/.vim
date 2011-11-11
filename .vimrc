@@ -57,6 +57,7 @@ set textwidth=150                   " Default text width
 set colorcolumn=+1                  " Display a one column wide right gutter
 set undofile                        " Enable persistent undo
 set undodir=$HOME/.vim/undo         " Set the persistent undo directory
+set backup                          " Enable backups
 set backupdir=$HOME/.vim/backup     " Set the backup directory
 set dir=$HOME/.vim/swap             " Set the swap directory
 set clipboard=unnamedplus           " Use the system clipboard by default
