@@ -1,7 +1,3 @@
-" Use Vim settings, rather then Vi settings. This must be first, because it
-" changes other options as a side effect.
-set nocompatible
-
 " Enable 256 colors for gnome-terminal.
 if $COLORTERM == 'gnome-terminal' || $COLORTERM == 'rxvt' || $COLORTERM == 'rxvt-xpm'
     set t_Co=256
