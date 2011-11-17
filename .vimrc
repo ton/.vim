@@ -126,7 +126,9 @@ let g:BufSurfIgnore = '\[BufExplorer\],GoToFile'
 " Configure bufexplorer plugin.
 let g:bufExplorerFindActive = 0                     " prevent BufExplorer from messing up the navigation history
 let g:bufExplorerShowRelativePath = 1               " show relative paths
-map <silent> <leader>b :BufExplorer<CR>             " map <leader>b to opening to buffer explorer
+
+" Map <leader>b to opening to buffer explorer.
+map <silent> <leader>b :BufExplorer<CR>
 
 " Configure a.vim.
 map <F4> :A<CR>                                     " switch between header and implementation using F4
