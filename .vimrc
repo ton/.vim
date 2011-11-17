@@ -84,13 +84,6 @@ function! Make()
   call feedkeys("<CR>", "n")
 endfunction
 
-" Map Alt-n to switch to the n-th tab.
-nmap <A-1> :tabnext 1<CR>
-nmap <A-2> :tabnext 2<CR>
-nmap <A-3> :tabnext 3<CR>
-nmap <A-4> :tabnext 4<CR>
-nmap <A-5> :tabnext 5<CR>
-
 " Remap Ctrl-s to save the current file.
 map <silent> <C-s> :w<CR>
 imap <silent> <C-s> <Esc>:w<CR>a
@@ -112,13 +105,6 @@ nmap ^ :Ack<CR><CR>
 " Configure plugins.
 " ------------------------------------------------------------------------------
 
-" Configure Command-T plugin.
-function! CommandTOpenInNewTab()
-    let g:CommandTAcceptSelectionMap = ""
-    let g:CommandTAcceptSelectionTabMap = "<CR>"
-    exe "CommandT"
-endfunction
-
 function! CommandTOpenInCurrentTab()
     let g:CommandTAcceptSelectionMap = "<CR>"
     let g:CommandTAcceptSelectionTabMap = ""
@@ -130,7 +116,6 @@ let g:CommandTMaxHeight = 20                        " maximum height of Command-
 let g:CommandTCancelMap = '<ESC>'                   " dismiss the Command-T popup
 
 nmap <silent> <leader>e :call CommandTOpenInCurrentTab()<CR>
-nmap <silent> <leader>t :call CommandTOpenInNewTab()<CR>
 nmap <silent> <leader>r :CommandTFlush<CR>
 
 " Configure bufsurf plugin.
