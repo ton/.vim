@@ -225,9 +225,6 @@ au FileType python setlocal textwidth=80
 au FileType python setlocal formatoptions=croqn
 au FileType python setlocal colorcolumn=
 
-" May solve slow PHP performance
-" autocmd BufWinLeave * call clearmatches()
-
 " Read in a custom Vim configuration local to the working directory.
 if filereadable(".project.vim")
     so .project.vim
