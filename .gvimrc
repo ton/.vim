@@ -1,12 +1,10 @@
-" Disable the GUI toolbar and menubar.
-set guioptions-=T
-set guioptions-=m
+" ------------------------------------------------------------------------------
+" UI settings
+" ------------------------------------------------------------------------------
 
-" Show tab pages in console style.
-set guioptions-=e
-
-" Allow maximum sized window.
-set guiheadroom=-100
-
-" Disable audible and visible bells
-set vb t_vb=
+colorscheme wombat                  " set colorscheme
+set guiheadroom=-100                " allow maximum sized window
+set guioptions-=e                   " show tab pages in console style
+set guioptions-=T                   " disable the GUI toolbar
+set guioptions-=m                   " disable the GUI menubar
+set noerrorbells                    " disable audible and visible bells

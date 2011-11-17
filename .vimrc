@@ -1,81 +1,91 @@
-" Enable 256 colors for gnome-terminal.
-if $COLORTERM == 'gnome-terminal' || $COLORTERM == 'rxvt' || $COLORTERM == 'rxvt-xpm'
-    set t_Co=256
-endif
+"-------------------------------------------------------------------------------
+" Text formatting
+"-------------------------------------------------------------------------------
 
-" Switch syntax highlighting and a colorscheme on, when the terminal has colors or when we are
-" in GUI mode.
-if has("gui_running")
-    colorscheme wombat
-    syntax on
-elseif &t_Co > 2
-    set t_so=[7m
-    set t_ZH=[3m
-    colorscheme wombat256
-    syntax on
-endif
+set autoindent                       " always set autoindenting on
+set expandtab                        " insert spaces when the tab key is pressed
+set shiftround                       " use multiple of shiftwidth when indenting
+                                     " with '<' and '>'
+set shiftwidth=4                     " number of spaces to use for autoindenting
+set smarttab                         " insert tabs on the start of a line
+                                     " according to shiftwidth, not tabstop
+set tabstop=4                        " a tab is four spaces
+set wrap                             " wrap too long lines.
 
-" Load pathogen.
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+"-------------------------------------------------------------------------------
+" UI settings
+"-------------------------------------------------------------------------------
 
-" Set our personal modifier key to ','.
-let mapleader = ","
+syntax on                            " enable syntax highlighting
+colorscheme wombat256                " set colorscheme for 256 color terminals
 
-" Basic editor settings
-set wrap                            " wrap too long lines.
-set tabstop=4                       " a tab is four spaces
-set backspace=indent,eol,start      " allow backspacing over everything in insert mode
-set autoindent                      " always set autoindenting on
-set number                          " always show line numbers
-set numberwidth=5                   " we are good for up to 99999 lines
-set shiftwidth=4                    " number of spaces to use for autoindenting
-set shiftround                      " use multiple of shiftwidth when indenting with '<' and '>'
-set showmatch                       " set show matching parenthesis
-set smartcase                       " ignore case if search pattern is all lowercase, case-sensitive otherwise
-set smarttab                        " insert tabs on the start of a line according to shiftwidth, not tabstop
-set incsearch                       " show search matches as you type
-set autoread                        " automatically reload a file when it has been changed
-set printoptions=paper:a4,duplex:on " print on a4 by default and enable duplex printing
-set expandtab                       " insert spaces when the tab key is pressed
-set hidden                          " be able to put the current buffer to the background without writing to disk and remember marks and
-                                    " undo-history when a background buffer becomes current again
-set showmatch                       " enable brace highlighting
-set matchtime=3                     " set brace match time
-set history=50                      " keep 50 lines of command line history
-set ruler                           " show the cursor position all the time
-set showcmd                         " display incomplete commands
-set scrolloff=3                     " maintain more context around the cursor
-set pastetoggle=<F2>                " F2 temporarily disables formatting when pasting text
-set listchars=tab:▸\ ,trail:·       " Set custom characters for non-printable characters
-set textwidth=150                   " Default text width
-set colorcolumn=+1                  " Display a one column wide right gutter
-set undofile                        " Enable persistent undo
-set undodir=$HOME/.vim/undo         " Set the persistent undo directory
-set backup                          " Enable backups
-set backupdir=$HOME/.vim/backup     " Set the backup directory
-set dir=$HOME/.vim/swap             " Set the swap directory
-set clipboard=unnamedplus           " Use the system clipboard by default
+set t_so=[7m                       " set escape codes for standout mode
+set t_ZH=[3m                       " set escape codes for italics mode
+set t_Co=256                         " force 256 colors by default
 
-" Quickly edit/reload the vimrc file.
+set backspace=indent,eol,start       " allow backspacing over everything in
+                                     " insert mode
+set colorcolumn=+1                   " display a one column wide right gutter
+set number                           " always show line numbers
+set numberwidth=5                    " we are good for up to 99999 lines
+set ruler                            " show the cursor position all the time
+set showcmd                          " display incomplete commands
+set textwidth=120                    " default text width
+
+"-------------------------------------------------------------------------------
+" Visual cues
+"-------------------------------------------------------------------------------
+
+set incsearch                        " show search matches as you type
+set listchars=tab:▸\ ,trail:·        " set custom characters for non-printable
+                                     " characters
+set matchtime=3                      " set brace match time
+set scrolloff=3                      " maintain more context around the cursor
+set showmatch                        " enable brace highlighting
+set smartcase                        " ignore case if search pattern is all
+                                     " lowercase, case-sensitive otherwise
+set visualbell                       " only show a visual cue when an error
+                                     " occurs
+
+"-------------------------------------------------------------------------------
+" Behavioural settings
+"-------------------------------------------------------------------------------
+
+set autoread                         " automatically reload a file when it has
+                                     " been changed
+set backup                           " enable backups
+set backupdir=$HOME/.vim/backup      " set the backup directory
+set clipboard=unnamedplus            " use the system clipboard by default
+set dir=$HOME/.vim/swap              " set the swap directory
+set hidden                           " be able to put the current buffer to the
+                                     " background without writing to disk and
+                                     " remember marks and undo-history when a
+                                     " background buffer becomes current again
+set history=50                       " keep 50 lines of command line history
+set printoptions=paper:a4,duplex:on  " print on a4 by default and enable duplex
+                                     " printing
+
+"-------------------------------------------------------------------------------
+" Key remappings
+"-------------------------------------------------------------------------------
+
+let mapleader=","                    " set our personal modifier key to ','
+
+set pastetoggle=<F2>                 " F2 temporarily disables formatting when
+                                     " pasting text
+
+" Quickly edit and reload the vimrc file.
 nmap <silent> <leader>ov :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-" Enable plugin support based on filetypes.
-filetype on
-filetype plugin on
-filetype indent on
+" Semap Ctrl-s to save the current file.
+map <silent> <C-s> :w<CR>
+imap <silent> <C-s> <Esc>:w<CR>a
 
-" Always start editing a file in case a swap file exists.
-augroup SimultaneousEdits
-    autocmd!
-    autocmd  SwapExists * :let v:swapchoice = 'e'
-augroup End
+" Remap Ctrl-q to close the current buffer
+nmap <silent> <C-q> :bdelete<CR>
 
-" ------------------------------------------------------------------------------
-" Custom key mappings.
-" ------------------------------------------------------------------------------
+" Remap <leader>m to execute a make.
 function! Make()
   exe "wa"
   exe "mak"
@@ -84,37 +94,47 @@ function! Make()
   call feedkeys("<CR>", "n")
 endfunction
 
-" Remap Ctrl-s to save the current file.
-map <silent> <C-s> :w<CR>
-imap <silent> <C-s> <Esc>:w<CR>a
-
-" Remap Ctrl-q to close the current buffer.
-nmap <silent> <C-q> :bdelete<CR>
-
-" Remap ,m to make.
 nmap <silent> <leader>m :silent! call Make()<CR>:redraw!<CR>
 
-" Remap Ctrl-j and Ctrl-k to jump to next and previous compiler error.
+" Remap Ctrl-k and Ctrl-j to jump to the previous and next compiler error
+" respectively.
 nmap <silent> <C-k> :cp<CR>
 nmap <silent> <C-j> :cn<CR>
 
 " Map ^ to grep word under cursor using Ack.
 nmap ^ :Ack<CR><CR>
 
-" ------------------------------------------------------------------------------
-" Configure plugins.
-" ------------------------------------------------------------------------------
+"-------------------------------------------------------------------------------
+" Configure plugins
+"-------------------------------------------------------------------------------
 
+" Load pathogen.
+filetype off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+" Enable plugin support based on filetypes.
+filetype on
+filetype plugin on
+filetype indent on
+
+" Configure Command-T plugin.
 function! CommandTOpenInCurrentTab()
     let g:CommandTAcceptSelectionMap = "<CR>"
     let g:CommandTAcceptSelectionTabMap = ""
     exe "CommandT"
 endfunction
 
-let g:CommandTMatchWindowAtTop = 1                  " show the Command-T popup at the top of the screen
-let g:CommandTMaxHeight = 20                        " maximum height of Command-T popup
-let g:CommandTCancelMap = '<ESC>'                   " dismiss the Command-T popup
+" Show the Command-T popup at the top of the screen with a maximum height of 20
+" lines.
+let g:CommandTMatchWindowAtTop = 1
+let g:CommandTMaxHeight = 20
 
+" Use Escape to dismiss the Command-T popup menu.
+let g:CommandTCancelMap = '<ESC>'
+
+" Use <leader>e to open the Command-T popup menu, and <leader>r to refresh the
+" Command-T cached.
 nmap <silent> <leader>e :call CommandTOpenInCurrentTab()<CR>
 nmap <silent> <leader>r :CommandTFlush<CR>
 
@@ -124,21 +144,27 @@ nmap <silent> <C-o> :BufSurfForward<CR>
 let g:BufSurfIgnore = '\[BufExplorer\],GoToFile'
 
 " Configure bufexplorer plugin.
-let g:bufExplorerFindActive = 0                     " prevent BufExplorer from messing up the navigation history
-let g:bufExplorerShowRelativePath = 1               " show relative paths
+
+" Prevent BufExplorer from messing up the navigation history, and make sure
+" relative paths are displayed in the bufexplorer window.
+let g:bufExplorerFindActive = 0
+let g:bufExplorerShowRelativePath = 1
 
 " Map <leader>b to opening to buffer explorer.
 map <silent> <leader>b :BufExplorer<CR>
 
-" Configure a.vim.
-map <F4> :A<CR>                                     " switch between header and implementation using F4
-let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,sfr:../itf'
-                                                    " include itf directory as alternate search path
-let g:alternateNoDefaultAlternate = 1               " do not open a non-existing alternate file
+" Switch between header and implementation using F4.
+map <F4> :A<CR>
 
-" ------------------------------------------------------------------------------
-" Configure (keyword) completion.
-" ------------------------------------------------------------------------------
+" Configure the search paths to look for include/source files, and never open a
+" non existing source file.
+let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,sfr:../itf'
+let g:alternateNoDefaultAlternate = 1
+
+"-------------------------------------------------------------------------------
+" Configure (keyword) completion
+"-------------------------------------------------------------------------------
+
 function! OmniPopup(action)
     if pumvisible()
         if a:action == "down"
@@ -172,9 +198,9 @@ let g:clang_library_path = '/usr/local/lib/'
 let g:clang_use_library = 1
 let g:clang_complete_auto = 0
 
-" ------------------------------------------------------------------------------
-" File type specific settings.
-" ------------------------------------------------------------------------------
+"-------------------------------------------------------------------------------
+" File type specific settings
+"-------------------------------------------------------------------------------
 
 " Automatically remove trailing whitespace before write.
 function! StripTrailingWhitespace()
@@ -224,6 +250,16 @@ au BufEnter *.rst setlocal textwidth=80
 au FileType python setlocal textwidth=80
 au FileType python setlocal formatoptions=croqn
 au FileType python setlocal colorcolumn=
+
+"-------------------------------------------------------------------------------
+" Misc settings
+"-------------------------------------------------------------------------------
+
+" Always start editing a file in case a swap file exists.
+augroup SimultaneousEdits
+    autocmd!
+    autocmd SwapExists * :let v:swapchoice = 'e'
+augroup End
 
 " Read in a custom Vim configuration local to the working directory.
 if filereadable(".project.vim")
