@@ -85,6 +85,9 @@ imap <silent> <C-s> <Esc>:w<CR>a
 " Remap Ctrl-q to close the current buffer
 nmap <silent> <C-q> :bdelete<CR>
 
+" Remap K to do nothing instead of searching the man pages.
+nnoremap K <nop>
+
 " Remap <leader>m to execute a make.
 function! Make()
   exe "wa"
