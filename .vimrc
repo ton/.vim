@@ -32,6 +32,9 @@ set ruler                            " show the cursor position all the time
 set showcmd                          " display incomplete commands
 set textwidth=120                    " default text width
 
+" Resize splits when the window is resized.
+au VimResized * exe "normal! \<c-w>="
+
 "-------------------------------------------------------------------------------
 " Visual cues
 "-------------------------------------------------------------------------------
