@@ -161,6 +161,9 @@ map <F4> :A<CR>
 let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,sfr:../itf'
 let g:alternateNoDefaultAlternate = 1
 
+" Configure the YankRing plugin.
+let g:yankring_history_dir = expand('$HOME/.vim/')
+
 "-------------------------------------------------------------------------------
 " Configure (keyword) completion
 "-------------------------------------------------------------------------------
