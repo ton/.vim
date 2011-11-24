@@ -150,10 +150,8 @@ nmap <silent> <C-i> :BufSurfBack<CR>
 nmap <silent> <C-o> :BufSurfForward<CR>
 let g:BufSurfIgnore = '\[BufExplorer\],GoToFile'
 
-" Configure bufexplorer plugin.
-
-" Prevent BufExplorer from messing up the navigation history, and make sure
-" relative paths are displayed in the bufexplorer window.
+" Configure bufexplorer plugin. Prevent BufExplorer from messing up the navigation history, and make sure relative paths
+" are displayed in the bufexplorer window.
 let g:bufExplorerFindActive = 0
 let g:bufExplorerShowRelativePath = 1
 
