@@ -45,6 +45,8 @@ set listchars=tab:▸\ ,trail:·        " set custom characters for non-printabl
                                      " characters
 set matchtime=3                      " set brace match time
 set scrolloff=3                      " maintain more context around the cursor
+set showbreak=↪                      " character to display in front of wrapper
+                                     " lines
 set showmatch                        " enable brace highlighting
 set smartcase                        " ignore case if search pattern is all
                                      " lowercase, case-sensitive otherwise
