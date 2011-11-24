@@ -26,6 +26,7 @@ set t_Co=256                         " force 256 colors by default
 set backspace=indent,eol,start       " allow backspacing over everything in
                                      " insert mode
 set colorcolumn=+1                   " display a one column wide right gutter
+set nofoldenable                     " disable code folding by default
 set number                           " always show line numbers
 set numberwidth=5                    " we are good for up to 99999 lines
 set ruler                            " show the cursor position all the time
