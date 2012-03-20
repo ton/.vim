@@ -86,7 +86,7 @@ set pastetoggle=<F2>                 " F2 temporarily disables formatting when
 nmap <silent> <leader>ov :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-" Semap Ctrl-s to save the current file.
+" Remap Ctrl-s to save the current file.
 map <silent> <C-s> :w<CR>
 imap <silent> <C-s> <Esc>:w<CR>a
 
