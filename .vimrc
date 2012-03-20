@@ -82,6 +82,10 @@ let mapleader=","                    " set our personal modifier key to ','
 set pastetoggle=<F2>                 " F2 temporarily disables formatting when
                                      " pasting text
 
+" Map Ctrl-BackSpace to delete the previous word. Since URxvt maps
+" Ctrl-BackSpace to ^[^?, we need to specify that key combination here as well.
+imap <Esc><BS> <C-W>
+
 " Quickly edit and reload the vimrc file.
 nmap <silent> <leader>ov :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
