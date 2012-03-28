@@ -152,19 +152,12 @@ let g:CommandTCancelMap = '<ESC>'
 " Command-T cached.
 nmap <silent> <leader>e :call CommandTOpenInCurrentTab()<CR>
 nmap <silent> <leader>r :CommandTFlush<CR>
+nmap <silent> <leader>b :CommandTBuffer<CR>
 
 " Configure bufsurf plugin.
 nmap <silent> <C-i> :BufSurfBack<CR>
 nmap <silent> <C-o> :BufSurfForward<CR>
 let g:BufSurfIgnore = '\[BufExplorer\],GoToFile'
-
-" Configure bufexplorer plugin. Prevent BufExplorer from messing up the navigation history, and make sure relative paths
-" are displayed in the bufexplorer window.
-let g:bufExplorerFindActive = 0
-let g:bufExplorerShowRelativePath = 1
-
-" Map <leader>b to opening to buffer explorer.
-map <silent> <leader>b :BufExplorer<CR>
 
 " Switch between header and implementation using F4.
 map <F4> :A<CR>
