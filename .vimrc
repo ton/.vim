@@ -90,6 +90,10 @@ imap <Esc><BS> <C-W>
 nmap <silent> <leader>ov :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+" Map Y to copy to the end of the line (which is more logical, also according
+" to the Vim manual.
+map Y y$
+
 " Remap Ctrl-s to save the current file.
 map <silent> <C-s> :w<CR>
 imap <silent> <C-s> <Esc>:w<CR>a
@@ -167,8 +171,11 @@ map <F4> :A<CR>
 let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,sfr:../itf'
 let g:alternateNoDefaultAlternate = 1
 
-" Configure the YankRing plugin.
+" Configure the YankRing plugin. Note that we remove Y from the list of
+" YankRing keys for normal mode to make sure that the remap for Y from earlier
+" actually works.
 let g:yankring_history_dir = expand('$HOME/.vim/')
+let g:yankring_n_keys = 'D x X'
 
 "-------------------------------------------------------------------------------
 " Configure (keyword) completion
