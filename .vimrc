@@ -152,6 +152,9 @@ let g:CommandTMaxHeight = 20
 " Use Escape to dismiss the Command-T popup menu.
 let g:CommandTCancelMap = '<ESC>'
 
+" Sort buffers in Command-Ts buffer list according to their usage.
+let g:CommandTUseMruBufferOrder = 1
+
 " Use <leader>e to open the Command-T popup menu, and <leader>r to refresh the
 " Command-T cached.
 nmap <silent> <leader>e :call CommandTOpenInCurrentTab()<CR>
