@@ -43,8 +43,7 @@ set listchars=tab:▸\ ,trail:·        " set custom characters for non-printabl
                                      " characters
 set matchtime=3                      " set brace match time
 set scrolloff=3                      " maintain more context around the cursor
-set linebreak                        " wrap characters at logical word
-                                     " boundaries
+set linebreak                        " wrap lines at logical word boundaries
 set showbreak=↪                      " character to display in front of wrapper
                                      " lines
 set showmatch                        " enable brace highlighting
