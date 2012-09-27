@@ -10,7 +10,7 @@ set shiftwidth=4                     " number of spaces to use for autoindenting
 set smarttab                         " insert tabs on the start of a line
                                      " according to shiftwidth, not tabstop
 set tabstop=4                        " a tab is four spaces
-set wrap                             " wrap too long lines.
+set wrap                             " wrap overlong lines
 
 "-------------------------------------------------------------------------------
 " UI settings
