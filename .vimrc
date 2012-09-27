@@ -25,13 +25,11 @@ set t_Co=256                         " force 256 colors by default
 
 set backspace=indent,eol,start       " allow backspacing over everything in
                                      " insert mode
-set colorcolumn=+1                   " display a one column wide right gutter
 set nofoldenable                     " disable code folding by default
 set number                           " always show line numbers
 set numberwidth=5                    " we are good for up to 99999 lines
 set ruler                            " show the cursor position all the time
 set showcmd                          " display incomplete commands
-set textwidth=120                    " default text width
 
 " Resize splits when the window is resized.
 au VimResized * exe "normal! \<c-w>="
@@ -45,6 +43,8 @@ set listchars=tab:▸\ ,trail:·        " set custom characters for non-printabl
                                      " characters
 set matchtime=3                      " set brace match time
 set scrolloff=3                      " maintain more context around the cursor
+set linebreak                        " wrap characters at logical word
+                                     " boundaries
 set showbreak=↪                      " character to display in front of wrapper
                                      " lines
 set showmatch                        " enable brace highlighting
