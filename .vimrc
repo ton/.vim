@@ -237,6 +237,10 @@ au BufEnter *.go setlocal syntax=go
 au BufEnter *.ui setlocal tabstop=1
 au BufEnter *.ui setlocal shiftwidth=1
 
+" Set tab stop to 4 for Vimscript files.
+au BufEnter *.vim setlocal tabstop=4
+au BufEnter *.vim setlocal shiftwidth=4
+
 " Strip trailing white spaces in source code.
 au BufWritePre .vimrc,*.js,*.cpp,*.hpp,*.php,*.h,*.c :call StripTrailingWhitespace()
 
