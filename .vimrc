@@ -103,6 +103,9 @@ nmap <silent> <C-q> :bdelete<CR>
 " Remap K to do nothing instead of searching the man pages.
 nnoremap K <nop>
 
+" Remap Q to do nothing instead of entering ex mode.
+nnoremap Q <nop>
+
 " Remap <leader>m to execute a make.
 function! Make()
   exe "wa"
