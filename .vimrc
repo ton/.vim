@@ -151,8 +151,8 @@ highlight default link CommandTCharMatched Question
 
 " Show the Command-T popup at the top of the screen with a maximum height of 20
 " lines.
-let g:CommandTMatchWindowAtTop = 1
-let g:CommandTMaxHeight = 20
+let g:CommandTMatchWindowReverse = 1
+let g:CommandTMaxHeight = 10
 
 " Use Escape to dismiss the Command-T popup menu.
 let g:CommandTCancelMap = '<ESC>'
