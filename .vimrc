@@ -160,6 +160,11 @@ let g:CommandTCancelMap = '<ESC>'
 " Sort buffers in Command-Ts buffer list according to their usage.
 let g:CommandTUseMruBufferOrder = 1
 
+" For Powerline, always show the status line, and enable the fancy special
+" Unicode characters in the statusline (requires a patched font).
+set laststatus=2
+let g:Powerline_symbols='fancy'
+
 " Use <leader>e to open the Command-T popup menu, and <leader>r to refresh the
 " Command-T cached.
 nmap <silent> <leader>e :call CommandTOpenInCurrentTab()<CR>
