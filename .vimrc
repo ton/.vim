@@ -146,6 +146,9 @@ function! CommandTOpenInCurrentTab()
     exe "CommandT"
 endfunction
 
+" Improve highlighting of matching characters in Command-T's popup window.
+highlight default link CommandTCharMatched Question
+
 " Show the Command-T popup at the top of the screen with a maximum height of 20
 " lines.
 let g:CommandTMatchWindowAtTop = 1
