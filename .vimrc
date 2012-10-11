@@ -164,6 +164,7 @@ let g:CommandTUseMruBufferOrder = 1
 " Unicode characters in the statusline (requires a patched font).
 set laststatus=2
 let g:Powerline_symbols='fancy'
+let g:Powerline_theme = 'custom'
 
 " Use <leader>e to open the Command-T popup menu, and <leader>r to refresh the
 " Command-T cached.
