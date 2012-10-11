@@ -51,6 +51,7 @@ set smartcase                        " ignore case if search pattern is all
                                      " lowercase, case-sensitive otherwise
 set visualbell                       " only show a visual cue when an error
                                      " occurs
+set laststatus=2                     " always show the status line
 
 "-------------------------------------------------------------------------------
 " Behavioural settings
@@ -159,12 +160,6 @@ let g:CommandTCancelMap = '<ESC>'
 
 " Sort buffers in Command-Ts buffer list according to their usage.
 let g:CommandTUseMruBufferOrder = 1
-
-" For Powerline, always show the status line, and enable the fancy special
-" Unicode characters in the statusline (requires a patched font).
-set laststatus=2
-let g:Powerline_symbols='fancy'
-let g:Powerline_theme = 'custom'
 
 " Use <leader>e to open the Command-T popup menu, and <leader>r to refresh the
 " Command-T cached.
