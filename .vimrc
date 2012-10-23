@@ -41,6 +41,7 @@ au VimResized * exe "normal! \<c-w>="
 set incsearch                        " show search matches as you type
 set listchars=tab:▸\ ,trail:·        " set custom characters for non-printable
                                      " characters
+set list                             " always show non-printable characters
 set matchtime=3                      " set brace match time
 set scrolloff=3                      " maintain more context around the cursor
 set linebreak                        " wrap lines at logical word boundaries
@@ -257,9 +258,6 @@ au BufWritePre .vimrc,*.js,*.cpp,*.hpp,*.php,*.h,*.c :call StripTrailingWhitespa
 
 " Do not expand tabs for web related source code.
 au BufEnter *.php,*.html,*.css,*.js setlocal noexpandtab
-
-" Show special characters in source code.
-au BufEnter *.php,*.html,*.css,*.cpp,*.h,*.js,*.py setlocal list
 
 " Set text width for C++ code to be able to easily format comments.
 au FileType cpp setlocal textwidth=80
