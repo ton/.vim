@@ -205,6 +205,7 @@ let g:yankring_n_keys = 'D x X'
 " Configure the height of the Vimux split pane as a percentage of the total
 " screen height.
 let g:VimuxHeight = "15"
+let g:VimuxUseNearestPane = 1
 
 "-------------------------------------------------------------------------------
 " Configure (keyword) completion
