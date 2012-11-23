@@ -117,7 +117,19 @@ function! Make()
     call feedkeys("<CR>", "n")
 endfunction
 
-nmap <silent> <leader>m :silent! call Make()<CR>:redraw!<CR>
+" Runs the given command, and in case the command is succesfull, closes the
+" tmux pane, otherwise, it leaves the tmux pane open for analysis.
+function VimuxRunCommandOnce(command)
+    call VimuxRunCommand(a:command . "; if [ $? == 0 ]; then vim --remote-send \"<Esc>:call VimuxClosePanes()<CR>\"; fi")
+endfunction
+
+" Runs the user-specified make command, and opens the quickfix window in case
+" there are any errors.
+function! VimuxMake()
+    call VimuxRunCommand(&makeprg . " | tee /tmp/errors.err; vim --remote-send '<Esc>:call VimuxClosePanes()<CR>:cgetfile /tmp/errors.err | cw<CR><CR>'")
+endfunction
+
+nmap <silent> <leader>m :silent! call VimuxMake()<CR>
 
 " Remap Ctrl-k and Ctrl-j to jump to the previous and next compiler error
 " respectively.
@@ -190,6 +202,10 @@ let g:alternateNoDefaultAlternate = 1
 " actually works.
 let g:yankring_history_dir = expand('$HOME/.vim/')
 let g:yankring_n_keys = 'D x X'
+
+" Configure the height of the Vimux split pane as a percentage of the total
+" screen height.
+let g:VimuxHeight = "15"
 
 "-------------------------------------------------------------------------------
 " Configure (keyword) completion
