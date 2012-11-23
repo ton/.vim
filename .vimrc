@@ -238,11 +238,14 @@ inoremap <silent> <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 " Configure (keyword) completion.
 set completeopt=longest,menuone
 
+" Disable omni completion.
+set omnifunc=
+
 " Use clang library for C++ keyword completion, which is faster and boasts more features.
-let g:clang_auto_select = 1
-let g:clang_library_path = '/usr/local/lib/'
-let g:clang_use_library = 1
-let g:clang_complete_auto = 0
+" let g:clang_auto_select = 1
+" let g:clang_library_path = '/usr/local/lib/'
+" let g:clang_use_library = 1
+" let g:clang_complete_auto = 0
 
 "-------------------------------------------------------------------------------
 " File type specific settings
