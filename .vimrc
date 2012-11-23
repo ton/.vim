@@ -126,7 +126,7 @@ endfunction
 " Runs the user-specified make command, and opens the quickfix window in case
 " there are any errors.
 function! VimuxMake()
-    call VimuxRunCommand(&makeprg . " | tee /tmp/errors.err; vim --remote-send '<Esc>:call VimuxClosePanes()<CR>:cgetfile /tmp/errors.err | cw<CR><CR>'")
+    call VimuxRunCommand(&makeprg . " 2>&1 | tee /tmp/errors.err; vim --remote-send '<Esc>:call VimuxClosePanes()<CR>:cgetfile /tmp/errors.err | cw<CR><CR>'")
 endfunction
 
 nmap <silent> <leader>m :silent! call VimuxMake()<CR>
