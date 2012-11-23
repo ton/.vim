@@ -180,7 +180,7 @@ let g:CommandTMaxHeight = 10
 " Use Escape to dismiss the Command-T popup menu.
 let g:CommandTCancelMap = '<ESC>'
 
-" Sort buffers in Command-Ts buffer list according to their usage.
+" Use MRU ordering for buffer list in Command-T.
 let g:CommandTUseMruBufferOrder = 1
 
 " Use <leader>e to open the Command-T popup menu, and <leader>r to refresh the
