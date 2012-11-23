@@ -277,7 +277,6 @@ au BufEnter *.php,*.html,*.css,*.js setlocal noexpandtab
 
 " Set text width for C++ code to be able to easily format comments.
 au FileType cpp setlocal textwidth=80
-au FileType cpp setlocal colorcolumn=131,132
 au FileType cpp setlocal formatoptions=croqn
 
 " Add support for Doxygen comment leader.
@@ -296,7 +295,6 @@ au BufEnter *.rst setlocal textwidth=80
 " Set text width for Python to 80 to allow for proper docstring and comment formatting.
 au FileType python setlocal textwidth=80
 au FileType python setlocal formatoptions=croqn
-au FileType python setlocal colorcolumn=
 
 "-------------------------------------------------------------------------------
 " Misc settings
