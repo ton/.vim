@@ -105,7 +105,7 @@ nnoremap <C-i> <C-o>
 nnoremap <C-o> <C-i>
 
 " Remap Ctrl-q to close the current buffer
-nmap <silent> <C-q> :bdelete<CR>
+nmap <silent> <C-q> :bw!<CR>
 
 " Remap K to do nothing instead of searching the man pages.
 nnoremap K <nop>
