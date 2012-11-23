@@ -260,6 +260,10 @@ au BufEnter *.go setlocal syntax=go
 au BufEnter *.ui setlocal tabstop=1
 au BufEnter *.ui setlocal shiftwidth=1
 
+" Set tab stop to 1 for CMake files.
+au BufEnter CMakeLists.txt setlocal tabstop=2
+au BufEnter CMakeLists.txt setlocal shiftwidth=2
+
 " Set tab stop to 4 for Vimscript files.
 au BufEnter *.vim setlocal tabstop=4
 au BufEnter *.vim setlocal shiftwidth=4
