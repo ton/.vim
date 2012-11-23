@@ -110,11 +110,11 @@ nnoremap Q <nop>
 
 " Remap <leader>m to execute a make.
 function! Make()
-  exe "wa"
-  exe "mak"
-  exe "cw"
-  call feedkeys("<CR>", "n")
-  call feedkeys("<CR>", "n")
+    exe "wa"
+    exe "mak"
+    exe "cw"
+    call feedkeys("<CR>", "n")
+    call feedkeys("<CR>", "n")
 endfunction
 
 nmap <silent> <leader>m :silent! call Make()<CR>:redraw!<CR>
