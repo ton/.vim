@@ -185,9 +185,8 @@ nmap <silent> <leader>r :CommandTFlush<CR>
 nmap <silent> <leader>b :CommandTBuffer<CR>
 
 " Configure bufsurf plugin.
-nmap <silent> <C-i> :BufSurfBack<CR>
-nmap <silent> <C-o> :BufSurfForward<CR>
-let g:BufSurfIgnore = '\[BufExplorer\],GoToFile'
+nnoremap <C-i> <C-o>
+nnoremap <C-o> <C-i>
 
 " Switch between header and implementation using F4.
 map <F4> :A<CR>
