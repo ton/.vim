@@ -99,6 +99,11 @@ map Y y$
 map <silent> <C-s> :w<CR>
 imap <silent> <C-s> <Esc>:w<CR>a
 
+" Switch Ctri-i and Ctrl-o, jumping backwards using Ctrl-i and forwards using
+" Ctrl-o seems more logical given the keyboard layout.
+nnoremap <C-i> <C-o>
+nnoremap <C-o> <C-i>
+
 " Remap Ctrl-q to close the current buffer
 nmap <silent> <C-q> :bdelete<CR>
 
@@ -183,10 +188,6 @@ let g:CommandTUseMruBufferOrder = 1
 nmap <silent> <leader>e :call CommandTOpenInCurrentTab()<CR>
 nmap <silent> <leader>r :CommandTFlush<CR>
 nmap <silent> <leader>b :CommandTBuffer<CR>
-
-" Configure bufsurf plugin.
-nnoremap <C-i> <C-o>
-nnoremap <C-o> <C-i>
 
 " Switch between header and implementation using F4.
 map <F4> :A<CR>
