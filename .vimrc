@@ -132,7 +132,7 @@ endfunction
 " there are any errors.
 function! VimuxMake()
     exe "ccl"
-    call VimuxRunCommand(&makeprg . " 2>&1 | tee /tmp/errors.err; vim --remote-send '<Esc>:call VimuxClosePanes()<CR>:cfile /tmp/errors.err | cw<CR><CR>'")
+    call VimuxRunCommand(&makeprg . " 2>&1 | tee /tmp/errors.err; vim --remote-send '<Esc>:cfile /tmp/errors.err | cw<CR><CR>:call VimuxClosePanes()<CR>'")
 endfunction
 
 nmap <silent> <leader>m :silent! call VimuxMake()<CR>
