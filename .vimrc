@@ -240,6 +240,9 @@ inoremap <silent> <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 " Configure (keyword) completion.
 set completeopt=longest,menuone
 
+" Do not scan Boost include files.
+set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
+
 "-------------------------------------------------------------------------------
 " File type specific settings
 "-------------------------------------------------------------------------------
