@@ -124,7 +124,7 @@ endfunction
 
 " Runs the given command, and in case the command is succesfull, closes the
 " tmux pane, otherwise, it leaves the tmux pane open for analysis.
-function VimuxRunCommandOnce(command)
+function! VimuxRunCommandOnce(command)
     call VimuxRunCommand(a:command . "; if [ $? == 0 ]; then vim --servername " . v:servername . " --remote-send \"<Esc>:call VimuxClosePanes()<CR>\"; fi")
 endfunction
 
