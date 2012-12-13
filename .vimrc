@@ -31,6 +31,22 @@ set numberwidth=5                    " we are good for up to 99999 lines
 set ruler                            " show the cursor position all the time
 set showcmd                          " display incomplete commands
 
+" Enable Doxygen syntax highlighting.
+let g:load_doxygen_syntax=1
+let g:doxygen_javadoc_autobrief=0
+
+" Use custom colors for Doxygen syntax highlighting.
+highlight link doxygenSpecialOneLineDesc Comment
+
+highlight SpecialComment cterm=NONE ctermfg=240
+highlight link doxygenSpecial SpecialComment
+highlight link doxygenBOther SpecialComment
+highlight link doxygenSmallSpecial SpecialComment
+
+highlight doxygenParamName cterm=bold ctermfg=249
+highlight link doxygenArgumentWord doxygenParamName
+highlight link doxygenCodeWord doxygenParamName
+
 " Resize splits when the window is resized.
 au VimResized * exe "normal! \<c-w>="
 
