@@ -89,6 +89,8 @@ set hidden                           " be able to put the current buffer to the
 set history=50                       " keep 50 lines of command line history
 set printoptions=paper:a4,duplex:on  " print on a4 by default and enable duplex
                                      " printing
+set nostartofline                    " do not change the X position of the
+                                     " cursor when paging up and down
 
 "-------------------------------------------------------------------------------
 " Key remappings
