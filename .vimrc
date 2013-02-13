@@ -30,6 +30,7 @@ set number                           " always show line numbers
 set numberwidth=5                    " we are good for up to 99999 lines
 set ruler                            " show the cursor position all the time
 set showcmd                          " display incomplete commands
+set mouse=a                          " allow for mouse scrolling in tmux
 
 " Enable Doxygen syntax highlighting.
 let g:load_doxygen_syntax=1
