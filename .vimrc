@@ -252,8 +252,11 @@ inoremap <silent> <expr> <Nul> pumvisible() ? "" : "\<C-X>\<C-U>\<Down>"
 " Escape should always close the completion menu at once.
 inoremap <silent> <expr> <Esc> pumvisible() ? "\<C-E>\<Esc>" : "\<Esc>"
 
-" Enter should select the currently highlighted menu item.
-inoremap <silent> <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+" Allow the Enter key to select the first item in the list.
+let g:ycm_key_list_select_completion = ['<TAB>', '<CR>']
+
+" Disable YCM auto complete inside the following file types.
+let g:ycm_filetypes_to_completely_ignore = { 'gitcommit': 1, 'vim': 1 }
 
 " Configure (keyword) completion.
 set completeopt=longest,menuone
