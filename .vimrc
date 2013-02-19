@@ -37,12 +37,15 @@ let g:load_doxygen_syntax=1
 let g:doxygen_javadoc_autobrief=0
 
 " Use custom colors for Doxygen syntax highlighting.
+highlight link doxygenBrief Comment
 highlight link doxygenSpecialOneLineDesc Comment
+highlight link doxygenSpecialTypeOneLineDesc Comment
 
 highlight SpecialComment cterm=NONE ctermfg=240
 highlight link doxygenSpecial SpecialComment
 highlight link doxygenBOther SpecialComment
 highlight link doxygenSmallSpecial SpecialComment
+highlight link doxygenParamDirection SpecialComment
 
 highlight doxygenParamName cterm=bold ctermfg=249
 highlight link doxygenArgumentWord doxygenParamName
@@ -99,8 +102,8 @@ set nostartofline                    " do not change the X position of the
 
 let mapleader=","                    " set our personal modifier key to ','
 
-set pastetoggle=<F2>                 " F2 temporarily disables formatting when
-                                     " pasting text
+" Leader + 2 toggles between paste modes.
+nmap <silent> <leader>2 :set paste!<CR>
 
 " Map Ctrl-BackSpace to delete the previous word. Since URxvt maps
 " Ctrl-BackSpace to ^[^?, we need to specify that key combination here as well.
@@ -135,10 +138,12 @@ nnoremap Q <nop>
 " Remap <leader>m to execute a make.
 function! Make()
     exe "wa"
-    exe "mak"
-    exe "cw"
-    call feedkeys("<CR>", "n")
-    call feedkeys("<CR>", "n")
+    exe ""
+    call Build(&makeprg)
+    " exe "mak"
+    " exe "cw"
+    "call feedkeys("<CR>", "n")
+    "call feedkeys("<CR>", "n")
 endfunction
 
 " Runs the given command, and in case the command is succesfull, closes the
@@ -151,7 +156,7 @@ endfunction
 " there are any errors.
 function! VimuxMake()
     exe "ccl"
-    call VimuxRunCommand(&makeprg . " 2>&1 | tee /tmp/errors.err; vim --servername " . v:servername . " --remote-send '<Esc>:cfile /tmp/errors.err | cw<CR><CR>:call VimuxClosePanes()<CR>'")
+    call VimuxRunCommand(&makeprg . " 2>&1 | tee /tmp/errors.err; vim --servername " . v:servername . " --remote-send '<Esc>:cfile /tmp/errors.err | cw<CR><CR>'")
 endfunction
 
 nmap <silent> <leader>m :silent! call VimuxMake()<CR>
@@ -244,8 +249,8 @@ function! OmniPopup(action)
 endfunction
 
 " Remap Ctrl-j and Ctrl-k to move up and down in popup lists.
-inoremap <silent> <C-j> <C-R>=OmniPopup("down")<CR>
-inoremap <silent> <C-k> <C-R>=OmniPopup("up")<CR>
+inoremap <silent> <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <silent> <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-j>"
 
 " Open the completion menu using C-Space, note that C-Space inserts the <Nul> character.
 inoremap <silent> <expr> <Nul> pumvisible() ? "" : "\<C-X>\<C-U>\<Down>"
@@ -260,7 +265,7 @@ let g:ycm_key_list_select_completion = ['<TAB>', '<CR>']
 let g:ycm_filetypes_to_completely_ignore = { 'gitcommit': 1, 'vim': 1 }
 
 " Configure (keyword) completion.
-set completeopt=longest,menuone
+set completeopt=menuone
 
 " Do not scan Boost include files.
 set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
