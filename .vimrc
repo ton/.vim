@@ -100,8 +100,6 @@ set nostartofline                    " do not change the X position of the
 " Key remappings
 "-------------------------------------------------------------------------------
 
-let mapleader=","                    " set our personal modifier key to ','
-
 " Leader + 2 toggles between paste modes.
 nmap <silent> <leader>2 :set paste!<CR>
 
