@@ -112,7 +112,7 @@ nmap <silent> <leader>ov :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Map Y to copy to the end of the line (which is more logical, also according
-" to the Vim manual.
+" to the Vim manual).
 map Y y$
 
 " Remap Ctrl-s to save the current file.
