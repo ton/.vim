@@ -249,14 +249,15 @@ inoremap <silent> <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-j>"
 " Open the completion menu using C-Space, note that C-Space inserts the <Nul> character.
 inoremap <silent> <expr> <Nul> pumvisible() ? "" : "\<C-X>\<C-U>\<Down>"
 
-" Escape should always close the completion menu at once.
-inoremap <silent> <expr> <Esc> pumvisible() ? "\<C-E>\<Esc>" : "\<Esc>"
-
 " Allow the Enter key to select the first item in the list.
-let g:ycm_key_list_select_completion = ['<TAB>', '<CR>']
+" let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<CR>']
+let g:ycm_key_select_completion = '<CR>'
 
 " Disable YCM auto complete inside the following file types.
-let g:ycm_filetypes_to_completely_ignore = { 'gitcommit': 1, 'vim': 1 }
+let g:ycm_filetypes_to_completely_ignore = { 'gitcommit': 1, 'vim': 1, 'text': 1 }
+
+" Disable YCM auto popup.
+let g:ycm_min_num_of_chars_for_completion = 1000
 
 " Configure (keyword) completion.
 set completeopt=menuone
