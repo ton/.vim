@@ -165,11 +165,7 @@ nmap <silent> <C-k> :cp<CR>
 nmap <silent> <C-j> :cn<CR>
 
 " Map ^ to grep word under cursor using Ack.
-nmap ^ :Ack<CR><CR>
-
-" Use the silver searcher by default for the Ack plugin (we need a clean and
-" simple separate Ag plugin :P).
-let g:ackprg = 'ag --nogroup --nocolor --column'
+nmap ^ :Ag<CR><CR>
 
 "-------------------------------------------------------------------------------
 " Configure plugins
