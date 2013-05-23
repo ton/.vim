@@ -228,7 +228,6 @@ let g:VimuxHeight = "15"
 let g:VimuxUseNearestPane = 1
 
 " Configure the easy motion plugin to highlight matches on the complete page.
-" search
 nnoremap <leader>f H:call EasyMotion#WB(0, 0)<CR>
 
 "-------------------------------------------------------------------------------
