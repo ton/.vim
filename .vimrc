@@ -227,6 +227,10 @@ let g:yankring_n_keys = 'D x X'
 let g:VimuxHeight = "15"
 let g:VimuxUseNearestPane = 1
 
+" Configure the easy motion plugin to highlight matches on the complete page.
+" search
+nnoremap <leader>f H:call EasyMotion#WB(0, 0)<CR>
+
 "-------------------------------------------------------------------------------
 " Configure (keyword) completion
 "-------------------------------------------------------------------------------
