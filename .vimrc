@@ -262,6 +262,7 @@ let g:ycm_filetypes_to_completely_ignore = { 'gitcommit': 1, 'vim': 1, 'text': 1
 
 " Disable YCM auto popup.
 let g:ycm_min_num_of_chars_for_completion = 1000
+let g:ycm_semantic_triggers = { }
 
 " Configure (keyword) completion.
 set completeopt=menuone
