@@ -164,8 +164,8 @@ nmap <silent> <leader>m :silent! call VimuxMake()<CR>
 nmap <silent> <C-k> :cp<CR>
 nmap <silent> <C-j> :cn<CR>
 
-" Map ^ to grep word under cursor using Ack.
-nmap ^ :Ag<CR><CR>
+" Mapping for greping the word under cursor using Ack.
+nmap <leader>g :Ag<CR><CR>
 
 "-------------------------------------------------------------------------------
 " Configure plugins
