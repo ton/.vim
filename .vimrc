@@ -188,6 +188,7 @@ Bundle 'rking/ag.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'sickill/vim-pasta'
 Bundle 'ton/Command-T'
+Bundle 'vim-jp/cpp-vim'
 Bundle 'YankRing.vim'
 
 " Enable plugin support based on filetypes.
