@@ -147,14 +147,14 @@ endfunction
 " Runs the given command, and in case the command is succesfull, closes the
 " tmux pane, otherwise, it leaves the tmux pane open for analysis.
 function! VimuxRunCommandOnce(command)
-    call VimuxRunCommand(a:command . "; if [ $? == 0 ]; then vim --servername " . v:servername . " --remote-send \"<Esc>:call VimuxClosePanes()<CR>\"; fi")
+    call VimuxRunCommand(a:command . "; if [ $? == 0 ]; then vim --servername " . v:servername . " --remote-send \"<Esc>:call VimuxCloseRunner()<CR>\"; fi")
 endfunction
 
 " Runs the user-specified make command, and opens the quickfix window in case
 " there are any errors.
 function! VimuxMake()
     exe "ccl"
-    call VimuxRunCommand(&makeprg . " 2>&1 | tee /tmp/errors.err; vim --servername " . v:servername . " --remote-send '<Esc>:cfile /tmp/errors.err | cw<CR><CR>'")
+    call VimuxRunCommand(&makeprg . " 2>&1 | tee /tmp/errors.err; vim --servername " . v:servername . " --remote-send '<Esc>:cfile /tmp/errors.err | cw<CR><CR>:call VimuxCloseRunner()<CR>'")
 endfunction
 
 nmap <silent> <leader>m :silent! call VimuxMake()<CR>
@@ -181,7 +181,7 @@ Bundle 'gmarik/vundle'
 
 " List all external plugins managed through Vundle.
 Bundle 'a.vim'
-Bundle 'benmills/vimux'
+Bundle 'ton/vimux'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rking/ag.vim'
