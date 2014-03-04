@@ -136,12 +136,9 @@ nnoremap Q <nop>
 " Remap <leader>m to execute a make.
 function! Make()
     exe "wa"
-    exe ""
-    call Build(&makeprg)
-    " exe "mak"
-    " exe "cw"
-    "call feedkeys("<CR>", "n")
-    "call feedkeys("<CR>", "n")
+    exe "mak"
+    exe "redraw!"
+    exe "cw"
 endfunction
 
 " Runs the given command, and in case the command is succesfull, closes the
