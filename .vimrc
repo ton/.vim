@@ -325,6 +325,7 @@ au FileType h,hpp,cpp,c setlocal comments^=:///
 
 " Set text width for Git commit messages.
 au BufEnter .git/COMMIT_EDITMSG setlocal textwidth=72
+au BufEnter .git/COMMIT_EDITMSG setlocal spell spelllang=en_us
 
 " Set text width for Changelogs, and do not expand tabs.
 au BufEnter Changelog setlocal textwidth=80
