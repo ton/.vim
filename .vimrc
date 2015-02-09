@@ -179,7 +179,7 @@ Bundle 'gmarik/vundle'
 
 " List all external plugins managed through Vundle.
 Bundle 'a.vim'
-Bundle 'ton/vimux'
+Bundle 'benmills/vimux'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rking/ag.vim'
