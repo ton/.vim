@@ -247,17 +247,6 @@ nnoremap <leader>f H:call EasyMotion#WB(0, 0)<CR>
 " Configure (keyword) completion
 "-------------------------------------------------------------------------------
 
-function! OmniPopup(action)
-    if pumvisible()
-        if a:action == "down"
-            return "\<C-N>"
-        elseif a:action == "up"
-            return "\<C-P>"
-        endif
-    endif
-    return a:action
-endfunction
-
 " Remap Ctrl-j and Ctrl-k to move up and down in popup lists.
 inoremap <silent> <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <silent> <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
