@@ -260,7 +260,7 @@ endfunction
 
 " Remap Ctrl-j and Ctrl-k to move up and down in popup lists.
 inoremap <silent> <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-inoremap <silent> <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-j>"
+inoremap <silent> <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 
 " Open the completion menu using C-Space, note that C-Space inserts the <Nul> character.
 inoremap <silent> <expr> <Nul> pumvisible() ? "" : "\<C-X>\<C-U>\<Down>"
