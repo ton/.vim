@@ -136,8 +136,9 @@ nnoremap Q <nop>
 
 " Remap <leader>m to execute a make.
 function! I3Make()
-    exe "! i3-sensible-terminal -r 'scratchpad' -e '/bin/zsh -c \"vim-make.sh " . &makeprg . " " . v:servername . "\"' &"
-    exe "redraw!"
+    silent exe "ccl"
+    silent exe "! i3-sensible-terminal -r 'scratchpad' -e '/bin/zsh -c \"vim-make.sh \\\"" . &makeprg . "\\\" " . v:servername . "\"' &"
+    silent exe "redraw!"
 endfunction
 
 " Runs the given command, and in case the command is succesfull, closes the
