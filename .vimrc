@@ -137,7 +137,7 @@ nnoremap Q <nop>
 " Remap <leader>m to execute a make.
 function! I3Make()
     silent exe "ccl"
-    silent exe "! i3-sensible-terminal -r 'scratchpad' -e '/bin/zsh -c \"vim-make.sh \\\"" . &makeprg . "\\\" " . v:servername . "\"' &"
+    silent exe "! i3-sensible-terminal -r 'scratchpad' -e '/bin/zsh -c \"i3-vim-make.sh \\\"" . &makeprg . "\\\" " . v:servername . "\"' &"
     silent exe "redraw!"
 endfunction
 
@@ -154,7 +154,7 @@ function! VimuxMake()
     call VimuxRunCommand(&makeprg . " 2>&1 | tee /tmp/errors.err; vim --servername " . v:servername . " --remote-send '<Esc>:cfile /tmp/errors.err | cw<CR><CR>:call VimuxCloseRunner()<CR>'")
 endfunction
 
-nmap <silent> <leader>m :silent! call VimuxMake()<CR>
+nmap <silent> <leader>m :silent! call I3Make()<CR>
 
 " Remap Ctrl-k and Ctrl-j to jump to the previous and next compiler error
 " respectively.
