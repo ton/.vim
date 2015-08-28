@@ -184,7 +184,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'rking/ag.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'sickill/vim-pasta'
-Bundle 'ton/Command-T'
+Bundle 'wincent/Command-T'
 Bundle 'vim-jp/cpp-vim'
 Bundle 'YankRing.vim'
 
@@ -211,14 +211,11 @@ let g:CommandTMaxHeight = 10
 " Use Escape to dismiss the Command-T popup menu.
 let g:CommandTCancelMap = '<ESC>'
 
-" Use MRU ordering for buffer list in Command-T.
-let g:CommandTUseMruBufferOrder = 1
-
 " Use <leader>e to open the Command-T popup menu, and <leader>r to refresh the
 " Command-T cached.
 nmap <silent> <leader>e :call CommandTOpenInCurrentTab()<CR>
 nmap <silent> <leader>r :CommandTFlush<CR>
-nmap <silent> <leader>b :CommandTBuffer<CR>
+nmap <silent> <leader>b :CommandTMRU<CR>
 
 " Switch between header and implementation using F4.
 map <F4> :A<CR>
