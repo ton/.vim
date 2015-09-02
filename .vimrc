@@ -52,6 +52,9 @@ highlight doxygenParamName cterm=bold ctermfg=249
 highlight link doxygenArgumentWord doxygenParamName
 highlight link doxygenCodeWord doxygenParamName
 
+" Custom cursor line number background color.
+hi CursorLineNr ctermfg=11 ctermbg=0
+
 " Resize splits when the window is resized.
 au VimResized * exe "normal! \<c-w>="
 
