@@ -1,4 +1,28 @@
 "-------------------------------------------------------------------------------
+" Load third-party plugins
+"-------------------------------------------------------------------------------
+
+" Load Vundle.
+filetype off
+set rtp+=$HOME/.vim/bundle/vundle
+call vundle#rc()
+
+" Let Vundle manage Vundle.
+Bundle 'gmarik/vundle'
+
+" List all external plugins managed through Vundle.
+Bundle 'a.vim'
+Bundle 'benmills/vimux'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'pangloss/vim-javascript'
+Bundle 'rking/ag.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'sickill/vim-pasta'
+Bundle 'wincent/Command-T'
+Bundle 'vim-jp/cpp-vim'
+Bundle 'YankRing.vim'
+
+"-------------------------------------------------------------------------------
 " Text formatting
 "-------------------------------------------------------------------------------
 
@@ -171,26 +195,6 @@ nmap <leader>g :Ag<CR><CR>
 "-------------------------------------------------------------------------------
 " Configure plugins
 "-------------------------------------------------------------------------------
-
-" Load Vundle.
-filetype off
-set rtp+=$HOME/.vim/bundle/vundle
-call vundle#rc()
-
-" Let Vundle manage Vundle.
-Bundle 'gmarik/vundle'
-
-" List all external plugins managed through Vundle.
-Bundle 'a.vim'
-Bundle 'benmills/vimux'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'pangloss/vim-javascript'
-Bundle 'rking/ag.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'sickill/vim-pasta'
-Bundle 'wincent/Command-T'
-Bundle 'vim-jp/cpp-vim'
-Bundle 'YankRing.vim'
 
 " Enable plugin support based on filetypes.
 filetype on
