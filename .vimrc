@@ -16,11 +16,11 @@ Bundle 'benmills/vimux'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rking/ag.vim'
-Bundle 'scrooloose/nerdcommenter'
 Bundle 'sickill/vim-pasta'
 Bundle 'wincent/Command-T'
 Bundle 'vim-jp/cpp-vim'
 Bundle 'YankRing.vim'
+Bundle 'tpope/vim-commentary'
 
 "-------------------------------------------------------------------------------
 " Text formatting
@@ -316,6 +316,7 @@ au FileType cpp setlocal formatoptions=croqn
 
 " Add support for Doxygen comment leader.
 au FileType h,hpp,cpp,c setlocal comments^=:///
+au FileType h,hpp,cpp,c setlocal commentstring=//%s
 
 " Set text width for Git commit messages.
 au BufEnter .git/COMMIT_EDITMSG setlocal textwidth=72
