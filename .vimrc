@@ -7,9 +7,6 @@ filetype off
 set rtp+=$HOME/.vim/bundle/vundle
 call vundle#rc()
 
-" Let Vundle manage Vundle.
-Bundle 'gmarik/vundle'
-
 " List all external plugins managed through Vundle.
 Bundle 'a.vim'
 Bundle 'benmills/vimux'
