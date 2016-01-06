@@ -129,9 +129,10 @@ set nostartofline                    " do not change the X position of the
 " Leader + 2 toggles between paste modes.
 nmap <silent> <leader>2 :set paste!<CR>
 
-" Map Ctrl-BackSpace to delete the previous word. Since URxvt maps
-" Ctrl-BackSpace to ^[^?, we need to specify that key combination here as well.
-imap <Esc><BS> <C-W>
+" Map Ctrl-BackSpace to delete the previous word. Needs <C-h> remap as well
+" for terminal Vim.
+noremap! <C-BS> <C-w>
+noremap! <C-h> <C-w>
 
 " Quickly edit and reload the vimrc file.
 nmap <silent> <leader>ov :e $MYVIMRC<CR>
