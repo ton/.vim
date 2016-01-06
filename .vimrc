@@ -216,6 +216,9 @@ let g:CommandTMaxHeight = 10
 " Use Escape to dismiss the Command-T popup menu.
 let g:CommandTCancelMap = '<ESC>'
 
+" Never look for a parent Git directory to use as root.
+let g:CommandTTraverseSCM = 'pwd'
+
 " Use <leader>e to open the Command-T popup menu, and <leader>r to refresh the
 " Command-T cached.
 nmap <silent> <leader>e :call CommandTOpenInCurrentTab()<CR>
