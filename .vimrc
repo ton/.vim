@@ -287,6 +287,9 @@ function! StripTrailingWhitespace()
     normal `Z
 endfunction
 
+" Strip trailing white spaces in source code.
+au BufWritePre .vimrc,*.js,*.cpp,*.hpp,*.php,*.h,*.c :call StripTrailingWhitespace()
+
 " Syntax highlighting for Qt qmake project files.
 au BufEnter *.pro setlocal syntax=pro
 
@@ -304,9 +307,6 @@ au BufEnter CMakeLists.txt setlocal shiftwidth=2
 " Set tab stop to 4 for Vimscript files.
 au BufEnter *.vim setlocal tabstop=4
 au BufEnter *.vim setlocal shiftwidth=4
-
-" Strip trailing white spaces in source code.
-au BufWritePre .vimrc,*.js,*.cpp,*.hpp,*.php,*.h,*.c :call StripTrailingWhitespace()
 
 " Do not expand tabs for web related source code.
 au BufEnter *.php,*.html,*.css,*.js setlocal noexpandtab
