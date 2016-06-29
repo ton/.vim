@@ -79,6 +79,10 @@ hi CursorLineNr ctermfg=11 ctermbg=0
 " Resize splits when the window is resized.
 au VimResized * exe "normal! \<c-w>="
 
+" Disable relative line numbers in insert mode.
+au InsertEnter * :set norelativenumber
+au InsertLeave * :set relativenumber
+
 "-------------------------------------------------------------------------------
 " Visual cues
 "-------------------------------------------------------------------------------
