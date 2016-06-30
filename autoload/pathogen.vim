@@ -1,1 +1,0 @@
-../submodules/pathogen/autoload/pathogen.vim
