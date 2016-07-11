@@ -167,7 +167,7 @@ nnoremap Q <nop>
 " Remap <leader>m to execute a make.
 function! I3Make()
     silent exe "ccl"
-    silent exe "! i3-sensible-terminal -c scratchpad /bin/zsh -c \"i3-vim-make.sh \\\"" . &makeprg . "\\\" " . v:servername . "\" &> /dev/null &"
+    silent exe "! i3-sensible-terminal -c scratchpad -e tmux-vim-make.sh '" . &makeprg . "' " . v:servername . " &> /dev/null &"
     silent exe "redraw!"
 endfunction
 
