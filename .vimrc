@@ -35,6 +35,8 @@ set smarttab                         " insert tabs on the start of a line
 set tabstop=4                        " a tab is four spaces
 set wrap                             " wrap overlong lines
 
+set cino=g0                          " do not indent public/protected/private
+
 "-------------------------------------------------------------------------------
 " UI settings
 "-------------------------------------------------------------------------------
