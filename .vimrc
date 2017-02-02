@@ -338,6 +338,9 @@ au BufEnter *.rst setlocal textwidth=80
 au FileType python setlocal textwidth=80
 au FileType python setlocal formatoptions=croqn
 
+" Disable syntax highlighting for XML files.
+au FileType xml setlocal syntax=off
+
 "-------------------------------------------------------------------------------
 " Misc settings
 "-------------------------------------------------------------------------------
