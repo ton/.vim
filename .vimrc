@@ -18,6 +18,8 @@ Bundle 'wincent/Command-T'
 Bundle 'vim-jp/cpp-vim'
 Bundle 'YankRing.vim'
 Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
 
 "-------------------------------------------------------------------------------
 " Text formatting
