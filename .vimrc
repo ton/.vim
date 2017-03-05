@@ -100,6 +100,7 @@ set list                             " always show non-printable characters
 set matchtime=3                      " set brace match time
 set mps+=<:>                         " also match angle brackets
 set scrolloff=3                      " maintain more context around the cursor
+set sidescrolloff=3
 set linebreak                        " wrap lines at logical word boundaries
 set showbreak=↪                      " character to display in front of wrapper
                                      " lines
