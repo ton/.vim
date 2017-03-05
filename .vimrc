@@ -34,6 +34,7 @@ set smarttab                         " insert tabs on the start of a line
                                      " according to shiftwidth, not tabstop
 set tabstop=4                        " a tab is four spaces
 set wrap                             " wrap overlong lines
+set formatoptions+=j                 " delete comment character when joining commented lines
 
 set cino=g0                          " do not indent public/protected/private
 
@@ -321,7 +322,7 @@ au BufEnter *.php,*.html,*.css,*.js setlocal noexpandtab
 
 " Set text width for C++ code to be able to easily format comments.
 au FileType cpp setlocal textwidth=80
-au FileType cpp setlocal formatoptions=croqn
+au FileType cpp setlocal formatoptions+=croqn
 
 " Add support for Doxygen comment leader.
 au FileType h,hpp,cpp,c setlocal comments^=:///
@@ -340,7 +341,7 @@ au BufEnter *.rst setlocal textwidth=80
 
 " Set text width for Python to 80 to allow for proper docstring and comment formatting.
 au FileType python setlocal textwidth=80
-au FileType python setlocal formatoptions=croqn
+au FileType python setlocal formatoptions+=croqn
 
 " Disable syntax highlighting for XML files.
 au FileType xml setlocal syntax=off
