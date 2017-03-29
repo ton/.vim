@@ -57,7 +57,6 @@ set numberwidth=5                    " we are good for up to 99999 lines
 set ruler                            " show the cursor position all the time
 set showcmd                          " display incomplete commands
 set mouse=a                          " allow for mouse scrolling in tmux
-set rnu                              " enable relative line numbers
 set wildmenu                         " add command-line completion menu
 
 " Enable Doxygen syntax highlighting.
@@ -84,10 +83,6 @@ hi CursorLineNr ctermfg=11 ctermbg=0
 
 " Resize splits when the window is resized.
 au VimResized * exe "normal! \<c-w>="
-
-" Disable relative line numbers in insert mode.
-au InsertEnter * :set norelativenumber
-au InsertLeave * :set relativenumber
 
 "-------------------------------------------------------------------------------
 " Visual cues
