@@ -10,7 +10,7 @@ call vundle#rc()
 " List all external plugins managed through Vundle.
 Bundle 'a.vim'
 Bundle 'benmills/vimux'
-Bundle 'Lokaltog/vim-easymotion'
+Bundle 'easymotion/vim-easymotion'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rking/ag.vim'
 Bundle 'sickill/vim-pasta'
@@ -256,8 +256,25 @@ let g:yankring_n_keys = 'D x X'
 let g:VimuxHeight = "15"
 let g:VimuxUseNearestPane = 1
 
-" Configure the easy motion plugin to highlight matches on the complete page.
-nnoremap <leader>f H:call EasyMotion#WB(0, 0)<CR>
+" Do not use default EasyMotion mappings.
+let g:EasyMotion_do_mapping = 0
+
+" Show mactches using capital letters, allow using lowercase shortcuts.
+let g:EasyMotion_use_upper = 1
+let g:EasyMotion_keys = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ;'
+
+" Search case insensitive.
+let g:EasyMotion_smartcase = 1
+
+" Be less chatty.
+let g:EasyMotion_verbose = 0
+
+nmap <leader>f <Plug>(easymotion-s2)
+map <leader>j <Plug>(easymotion-j)
+map <leader>k <Plug>(easymotion-k)
+
+" Keep cursor column with j/k motion.
+let g:EasyMotion_startofline = 0
 
 " Set path for private snippets used by UltiSnips.
 let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
