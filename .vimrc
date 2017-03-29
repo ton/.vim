@@ -20,6 +20,7 @@ Bundle 'YankRing.vim'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
+Bundle 'SirVer/ultisnips'
 
 "-------------------------------------------------------------------------------
 " Text formatting
@@ -257,6 +258,9 @@ let g:VimuxUseNearestPane = 1
 
 " Configure the easy motion plugin to highlight matches on the complete page.
 nnoremap <leader>f H:call EasyMotion#WB(0, 0)<CR>
+
+" Set path for private snippets used by UltiSnips.
+let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
 
 "-------------------------------------------------------------------------------
 " Configure (keyword) completion
