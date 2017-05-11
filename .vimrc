@@ -116,7 +116,7 @@ set backup                           " enable backups
 set backupdir=$HOME/.vim/backup      " set the backup directory
 set undofile                         " enable persistent undo
 set undodir=$HOME/.vim/undo          " persistent undo directory
-set clipboard=unnamedplus            " use the system clipboard by default
+set clipboard^=unnamed,unnamedplus   " use the system clipboard by default
 set dir=$HOME/.vim/swap              " set the swap directory
 set hidden                           " be able to put the current buffer to the
                                      " background without writing to disk and
