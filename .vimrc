@@ -377,3 +377,6 @@ augroup End
 if filereadable(".project.vim")
     so .project.vim
 endif
+
+" Prevent Vim from clearing the system clipboard on exit.
+autocmd VimLeave * call system("xclip -o | xclip -selection c")
